@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G10 Mid-Year Revision · SISB IGCSE Economics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script src="sisb-tracker.js"></script>
+<style>
+:root{
+  --navy:#002F6C; --blue:#008BCC; --orange:#FF8F1C; --dkorange:#C25E00;
+  --ink:#1F2937; --mid:#4B5563; --muted:#6B7280; --line:#D6DEE9; --bg:#F4F7FB; --card:#FFFFFF;
+  --ltblue:#E6F3FA; --ltorange:#FFF1E0; --hl:#FFE0BD; --good:#1E7B34; --goodbg:#E7F5EA; --bad:#B3264E; --badbg:#FBE9EC;
+  --purple:#5B2C9A; --ltpurple:#EFE7FA; --deep:#001D44; --up:#2BC46A;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Lato,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.55}
+header{background:var(--navy);color:#fff;padding:18px 16px 0}
+.wrap{max-width:1100px;margin:0 auto}
+.kicker{color:var(--orange);font-weight:900;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:2px 0 2px;font-size:30px;font-weight:900;line-height:1.15}
+.sub{color:#CFE3F5;font-size:14.5px}
+.progress{display:flex;align-items:center;gap:10px;margin:12px 0 12px;font-size:13.5px;color:#CFE3F5}
+.bar{flex:1;max-width:260px;height:8px;background:rgba(255,255,255,.18);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--orange);transition:width .4s}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:0;background:rgba(255,255,255,.08);color:#DCE8F5;font:700 14px Lato,sans-serif;padding:11px 14px;border-radius:10px 10px 0 0;cursor:pointer;white-space:nowrap}
+.tab .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.18);font-size:12px;margin-right:6px}
+.tab.on{background:var(--bg);color:var(--navy)}
+.tab.on .n{background:var(--orange);color:#fff}
+.tab.done .n{background:var(--good);color:#fff}
+main{padding:20px 16px 48px}
+.panel{display:none}
+.panel.on{display:block}
+h2{color:var(--navy);font-size:23px;margin:0 0 4px;font-weight:900}
+.lead{color:var(--mid);margin:0 0 16px;max-width:820px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:16px}
+.card h3{margin:0 0 8px;color:var(--navy);font-size:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.btn{border:0;border-radius:10px;padding:10px 16px;font:700 15px Lato,sans-serif;cursor:pointer;background:var(--navy);color:#fff;min-height:44px}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn.orange{background:var(--orange);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.opts.col{flex-direction:column}
+.opt{border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;font:700 15px Lato,sans-serif;color:var(--navy);cursor:pointer;min-height:44px;text-align:left}
+.opt:hover{border-color:var(--blue)}
+.opt.ok{border-color:var(--good);background:var(--goodbg);color:var(--good)}
+.opt.no{border-color:var(--bad);background:var(--badbg);color:var(--bad)}
+.opt.sel{border-color:var(--navy);background:var(--ltblue)}
+.opt:disabled{cursor:default}
+.opt.plain{font-weight:400;color:var(--ink)}
+.fb{border-radius:10px;padding:12px 14px;margin-top:10px;font-size:15px}
+.fb.ok{background:var(--goodbg);border-left:5px solid var(--good)}
+.fb.no{background:var(--badbg);border-left:5px solid var(--bad)}
+.fb.info{background:var(--ltblue);border-left:5px solid var(--blue)}
+.pill{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.04em;padding:3px 9px;border-radius:20px;background:var(--ltblue);color:var(--navy)}
+.pill.o{background:var(--ltorange);color:var(--dkorange)}
+.muted{color:var(--muted);font-size:13.5px}
+.paper{display:flex;gap:10px;align-items:flex-start;background:var(--ltorange);border-left:5px solid var(--orange);border-radius:10px;padding:10px 14px;margin:0 0 16px;font-size:14.5px;max-width:820px}
+.paper b{color:var(--dkorange)}
+table.sched{border-collapse:collapse;width:100%;font-size:14.5px}
+table.sched th{background:var(--navy);color:#fff;font-weight:700;padding:7px 8px;text-align:center}
+table.sched td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:center}
+table.sched td.l{text-align:left}
+.seg{display:inline-flex;border:2px solid var(--navy);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{border:0;background:#fff;color:var(--navy);font:700 14px Lato,sans-serif;padding:9px 12px;cursor:pointer;min-height:42px}
+.seg button.on{background:var(--navy);color:#fff}
+.flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.stem{background:var(--ltblue,#E6F1F9);border-left:5px solid var(--navy);border-radius:10px;padding:12px 14px;margin:0 0 12px;font-size:15px;max-width:820px}
+.lbl{font-weight:900;color:var(--navy);margin:0 0 6px;font-size:14px}
+.twin{background:#fff;border:2px dashed var(--navy);border-radius:14px;padding:14px 16px}
+.twhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.twtag{background:var(--navy);color:#fff;font-weight:900;font-size:13px;padding:5px 12px;border-radius:999px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.twstem{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+.fr{display:flex;gap:12px;margin:8px 0}
+.frk{width:130px;flex:none;font-size:12.5px;color:var(--navy)}
+.frk b{display:block}
+.frh{display:block;color:var(--muted);font-style:italic;margin-top:2px}
+.frl{flex:1;min-width:0}
+.wline{border-bottom:1.5px solid var(--line);height:26px}
+.twin.nohints .frk{visibility:hidden}
+.twhide{display:inline-flex;gap:6px;align-items:center;margin-top:10px;font-size:14px;color:var(--muted);cursor:pointer}
+#printArea{display:none}
+@media (max-width:600px){.fr{flex-direction:column;gap:0}.frk{width:auto}.twin.nohints .frk{display:none}}
+@media print{body.print-twin>*:not(#printArea){display:none!important}body.print-twin #printArea{display:block}body.print-twin{background:#fff}
+ .twin.printme{border:none;padding:0}.twin.printme .wline{height:0.95cm;border-color:#9FB3C8}.twin.printme .qtext{font-size:15pt}.twin.printme .fr{break-inside:avoid}}
+@page{size:A4;margin:1.5cm}
+.qtext{font-size:20px;line-height:1.35;font-weight:700;color:var(--navy);margin:4px 0 6px}
+.score{font-size:15px;font-weight:900;color:var(--navy)}
+.hide{display:none!important}
+.hl{background:var(--hl);color:var(--dkorange);font-weight:900;padding:0 3px;border-radius:3px}
+.slot{min-height:46px;border:2px dashed var(--line);border-radius:10px;padding:9px 12px;margin:6px 0;background:#fff;font-size:15px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.slot .k{font-weight:900;color:var(--muted);min-width:96px;font-size:13px;padding-top:2px}
+.slot.filled{border-style:solid;border-color:var(--blue)}
+.slot.ok{border-color:var(--good);background:var(--goodbg)}
+.slot.no{border-color:var(--bad);background:var(--badbg)}
+.chip{display:block;width:100%;text-align:left;border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;margin:6px 0;font:400 15px Lato,sans-serif;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--blue)}
+.chip.used{opacity:.35;cursor:default}
+.chartbox{position:relative;max-width:440px;margin:0 auto}
+.chartbox svg{width:100%;height:auto;display:block}
+/* flashcards */
+.flash{border:2px solid var(--navy);border-radius:16px;min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;cursor:pointer;background:#fff;user-select:none}
+.flash .term{font-size:26px;font-weight:900;color:var(--navy)}
+.flash .def{font-size:18px;color:var(--ink);max-width:640px}
+.flash .hint{font-size:13px;color:var(--muted);margin-top:10px}
+.flash.back{background:var(--ltblue)}
+/* calc */
+.calcin{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
+.calcin input{font:700 18px Lato,sans-serif;padding:9px 12px;border:2px solid var(--line);border-radius:10px;width:180px;min-height:44px}
+.calcin .unit{font-weight:700;color:var(--mid)}
+.work{background:var(--ltpurple);border-left:5px solid var(--purple);border-radius:10px;padding:12px 14px;font-size:15px;margin-top:10px}
+.tally{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.tally i{width:22px;height:22px;border-radius:50%;background:var(--line);display:inline-block}
+.tally i.on{background:var(--good)}
+/* steps */
+.step{margin:10px 0}
+.step > b{display:block;margin-bottom:2px}
+.stmt{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:10px;padding:10px 12px;margin:6px 0;background:#fff;cursor:pointer;font-size:15px}
+.stmt input{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:var(--navy)}
+.stmt.ok{border-color:var(--good);background:var(--goodbg)}
+.stmt.no{border-color:var(--bad);background:var(--badbg)}
+.stmt .tag{font-size:12px;font-weight:900;color:var(--muted);display:block;margin-top:3px}
+.done-banner{background:var(--goodbg);border:2px solid var(--good);border-radius:12px;padding:12px 14px;font-weight:700;color:var(--good);margin-top:10px}
+
+/* ===== market board ===== */
+.board{background:var(--deep);color:#fff;padding:20px 16px 0;position:relative}
+.org{margin:0;color:#9FC3E6;font-size:14px;font-weight:700}
+.board h1{margin:2px 0 4px;font-size:40px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.board .sub{margin:0 0 16px;color:#CFE3F5;font-size:15px;max-width:70ch}
+.deck{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:14px;align-items:stretch}
+.index{position:relative;background:var(--navy);border-radius:16px;padding:14px 16px 12px;border:1px solid rgba(255,255,255,.12);overflow:hidden}
+.ixhead{display:flex;justify-content:space-between;font-size:13.5px;color:#9FC3E6;font-weight:700}
+.ixrow{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:2px 0 4px}
+.ixval{font-size:56px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ixchg{font-size:14.5px;font-weight:900;color:#9FC3E6}
+.ixchg.up{color:var(--up)}
+#ixSpark{width:100%;height:64px;display:block}
+.ixfoot{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:#CFE3F5;margin-top:6px;flex-wrap:wrap}
+#ixStreak.hot{color:var(--orange);font-weight:900}
+#ixFloat{position:absolute;left:16px;top:44px;pointer-events:none}
+.flt{position:absolute;white-space:nowrap;font-weight:900;font-size:20px;color:var(--up);animation:flt 1.1s ease-out forwards}
+@keyframes flt{0%{transform:translate(150px,10px);opacity:0}15%{opacity:1}100%{transform:translate(150px,-34px);opacity:0}}
+.ixval.bump{animation:bump .5s ease-out}
+@keyframes bump{30%{color:var(--up);transform:translateY(-3px)}100%{color:#fff;transform:none}}
+nav#tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tab{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;font:700 15px Lato,sans-serif;padding:11px 12px 10px;border-radius:12px;cursor:pointer;min-height:84px}
+.tab:hover{background:rgba(255,255,255,.12)}
+.tab:focus-visible,.btn:focus-visible,.opt:focus-visible,.chip:focus-visible,.seg button:focus-visible,.flash:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.tab .tr{display:flex;align-items:center;gap:8px;width:100%}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.16);font-size:13px;font-weight:900;flex:none}
+.tab .tp{margin-left:auto;font-size:13px;font-weight:900;color:#9FC3E6;font-variant-numeric:tabular-nums}
+.tab .tp.up{color:var(--up)}
+.tab .ts{font-size:12.5px;font-weight:400;color:#9FC3E6}
+.tab.on{background:#fff;color:var(--navy);border-color:#fff}
+.tab.on .n{background:var(--orange);color:#fff}
+.tab.on .ts,.tab.on .tp{color:var(--mid)}
+.tab.on .tp.up{color:var(--good)}
+.tab.done .n{background:var(--up);color:#fff}
+.ticker{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);overflow:hidden;white-space:nowrap;font-size:14px;color:#CFE3F5;height:38px;display:flex;align-items:center}
+.ticker .track{display:inline-block;padding-left:100%;animation:tick 260s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker b{color:var(--orange);margin-right:6px}
+.ticker .sep{color:var(--up);margin:0 16px}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media (max-width:820px){.deck{grid-template-columns:1fr}nav#tabs{display:flex;overflow-x:auto;scrollbar-width:none;gap:8px;padding-bottom:2px}nav#tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 156px;min-height:76px}.board h1{font-size:31px}.ixval{font-size:46px}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none;padding-left:16px}.ticker{overflow-x:auto}.flt,.ixval.bump,.opt.ok,.opt.no,.slot.ok{animation:none!important}}
+/* ===== panels ===== */
+.phead{display:flex;gap:14px;align-items:flex-start;margin:4px 0 14px}
+.phead .pn{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:22px;margin-top:2px}
+.phead h2{font-size:28px;margin:0 0 2px}
+.phead .lead{margin:0}
+.paper{margin:0 0 18px;padding:0 0 0 14px;border-left:3px solid var(--orange);color:var(--mid);font-size:14.5px;max-width:820px;background:none}
+.paper b{color:var(--dkorange)}
+.opt.ok{animation:pop .35s ease-out}
+.opt.no{animation:shake .3s}
+@keyframes pop{50%{transform:scale(1.02)}}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.opt .lt{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ltblue);color:var(--navy);font-weight:900;font-size:13px;margin-right:10px;flex:none}
+.opts.col .opt{display:flex;align-items:center}
+.opt.ok .lt{background:var(--good);color:#fff}.opt.no .lt{background:var(--bad);color:#fff}
+.flash{perspective:900px;transition:background .2s}
+.pace{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--mid);cursor:pointer}
+.pace input{width:18px;height:18px;accent-color:var(--orange)}
+.timer{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin:6px 0 2px}
+.timer i{display:block;height:100%;background:var(--orange);width:100%}
+.timer.low i{background:var(--bad)}
+.bonus{background:var(--deep);color:#fff;border-radius:14px;padding:14px 16px;margin:0 0 16px;display:flex;gap:12px;align-items:center;font-weight:700}
+.bonus b{color:var(--up);font-size:22px}
+.ixreset{background:none;border:0;color:#9FC3E6;font:400 12.5px Lato,sans-serif;text-decoration:underline;cursor:pointer;padding:0}
+.paper{display:block;border-radius:0}
+.phead h2{margin:0}
+.phead .lead{margin-top:2px}
+.phead{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.phead>div{display:contents}
+.phead .lead{grid-column:2}
+@media (max-width:600px){.phead .lead{grid-column:1/-1;margin-top:8px}.phead .pn{width:38px;height:38px;font-size:19px}.phead h2{font-size:25px}#ixSpark{height:44px}.ixval{font-size:42px}}
+.tab .tst{margin-top:auto;font-size:12.5px;font-weight:700;color:#9FC3E6;padding-top:6px}
+.tab.on .tst{color:var(--navy)}
+.tab.done .tst{color:var(--up)}
+.tab.on.done .tst{color:var(--good)}
+.ticker .track{padding-left:0;animation:tick 300s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.mini{position:fixed;top:10px;right:12px;z-index:60;background:var(--deep);color:#fff;border-radius:999px;padding:7px 14px;display:flex;gap:10px;align-items:center;font-size:13.5px;font-weight:700;box-shadow:0 6px 18px rgba(0,29,68,.28);transition:opacity .2s,transform .2s}
+.mini b{font-size:19px;font-variant-numeric:tabular-nums}
+.mini .ms{color:var(--orange)}
+.mini.off{opacity:0;transform:translateY(-10px);pointer-events:none}
+.mini .flt{left:auto;right:0;animation:flt2 1.1s ease-out forwards}
+@keyframes flt2{0%{transform:translate(0,14px);opacity:0}15%{opacity:1}100%{transform:translate(0,44px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}.mini{transition:none}}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:0 16px 30px}
+@media (max-width:600px){h1{font-size:25px}.flash .term{font-size:22px}.flash .def{font-size:16.5px}.slot .k{min-width:70px}}
+</style>
+</head>
+<body>
+<header class="board">
+  <div class="wrap">
+    <p class="org">Grade 10 IGCSE Economics, SISB Nonthaburi</p>
+    <h1>Mid-year revision</h1>
+    <p class="sub">Papers 1 and 2: everything from Grade 9 and Grade 10 so far. Use it with your Revision Guide and Practice Booklet.</p>
+    <div class="deck">
+      <section class="index" aria-label="Your revision index">
+        <div class="ixhead"><span>Your revision index</span><span id="ixBest"></span></div>
+        <div class="ixrow"><span id="ixVal" class="ixval">100.0</span><span id="ixChg" class="ixchg">Answer a question to move it</span></div>
+        <svg id="ixSpark" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="ixfoot"><span id="ixStreak" aria-live="polite">Streak: 0</span><span id="progTxt">0 of 6 activities complete</span><button class="ixreset" id="ixReset" type="button">Reset my index</button></div>
+        <div id="ixFloat" aria-hidden="true"></div>
+      </section>
+      <nav id="tabs" role="tablist" aria-label="Activities"></nav>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+</header>
+<div class="mini off" id="ixMini" aria-hidden="true"><span>Revision index</span><b id="ixMiniV">100.0</b><span class="ms" id="ixMiniS"></span></div>
+
+<main class="wrap">
+
+<!-- ============ TAB 1: KEY TERMS ============ -->
+<section class="panel" id="p0">
+  <div class="phead"><span class="pn" aria-hidden="true">1</span><div><h2>Key terms</h2>
+  <p class="lead">Learn the 63 terms with the flashcards, then test yourself. A 2-mark definition needs two precise ideas, so learn the key words.</p></div></div>
+  <p class="paper"><b>On paper:</b> Revision Guide Section 4 has every definition. Paper 2 always asks for definitions, and Paper 1 tests them in disguise.</p>
+  <div class="card">
+    <h3>1. Flashcards</h3>
+    <div class="seg" id="fcGroups" style="margin-bottom:12px"></div>
+    <div class="flash" id="flash" tabindex="0" role="button" aria-label="Flashcard: tap to turn over"></div>
+    <div class="flex" style="margin-top:12px;justify-content:space-between">
+      <div class="flex"><button class="btn alt" id="fcPrev">◀ Back</button><button class="btn" id="fcNext">Next ▶</button></div>
+      <div class="flex"><span class="muted" id="fcPos"></span><button class="btn alt" id="fcShuf">Shuffle</button></div>
+    </div>
+  </div>
+  <div class="card" id="tqCard"></div>
+</section>
+
+<!-- ============ TAB 2: CALCULATIONS ============ -->
+<section class="panel" id="p1">
+  <div class="phead"><span class="pn" aria-hidden="true">2</span><div><h2>Calculations</h2>
+  <p class="lead">Every calculation type in Papers 1 and 2, with new numbers each time. Get <b>8 correct</b> to complete this activity. Use the calculator on your phone or a real one, as in the exam.</p></div></div>
+  <p class="paper"><b>On paper:</b> Practice Booklet Part 2 (C1–C9) and the formula table in Revision Guide Section 5.</p>
+  <div class="card">
+    <div class="flex" style="justify-content:space-between"><b>Choose a type</b><span class="score" id="cScore"></span></div>
+    <div class="seg" id="cTypes" style="margin:8px 0 6px"></div>
+    <div class="tally" id="cTally"></div>
+  </div>
+  <div class="card" id="cCard">
+    <span class="pill" id="cTag"></span>
+    <p class="qtext" id="cQ"></p>
+    <div class="calcin"><input id="cIn" type="text" inputmode="decimal" autocomplete="off" aria-label="Your answer"><span class="unit" id="cUnit"></span><button class="btn" id="cCheck">Check</button><button class="btn alt" id="cNew">New question</button></div>
+    <p class="muted" id="cHint"></p>
+    <div id="cFb"></div>
+  </div>
+</section>
+
+<!-- ============ TAB 3: QUICK-FIRE ============ -->
+<section class="panel" id="p2">
+  <div class="phead"><span class="pn" aria-hidden="true">3</span><div><h2>Paper 1 quick-fire</h2>
+  <p class="lead">Twelve multiple-choice questions per round, drawn from 24. None of them are in your Practice Booklet. Read all four options before you choose.</p></div></div>
+  <p class="paper"><b>On paper:</b> Do Practice Booklet Part 1 first, on paper and timed. Use these rounds for extra practice on your weak topics.</p>
+  <div class="card" id="mcqCard"></div>
+</section>
+
+<!-- ============ TAB 4: SHIFTS ============ -->
+<section class="panel" id="p3">
+  <div class="phead"><span class="pn" aria-hidden="true">4</span><div><h2>Shifts and diagrams</h2>
+  <p class="lead">Ten events: seven markets and three PPCs. Decide what moves, which way and what happens. The diagram draws itself when you finish each event.</p></div></div>
+  <p class="paper"><b>On paper:</b> Section A always has a “how does this change affect the market” question. Revision Guide Section 3 (Diagram workshop) has model diagrams and drawing drills.</p>
+  <div class="card" id="shCard">
+    <div class="flex" style="justify-content:space-between"><span class="pill" id="shNum"></span><span class="score" id="shScore"></span></div>
+    <p class="muted" id="shMkt" style="margin:8px 0 0"></p>
+    <p class="qtext" id="shEvent"></p>
+    <div id="shSteps"></div>
+    <div id="shFb"></div>
+    <div class="chartbox hide" id="shChart" style="margin-top:10px"></div>
+    <button class="btn hide" id="shNext" style="margin-top:12px">Next event</button>
+  </div>
+</section>
+
+<!-- ============ TAB 5: SECTION A ============ -->
+<section class="panel" id="p4">
+  <div class="phead"><span class="pn" aria-hidden="true">5</span><div><h2>Section A skills</h2>
+  <p class="lead">Two skills that decide many Section A marks: precise definitions, and analysing a table of data.</p></div></div>
+  <p class="paper"><b>On paper:</b> Practice Booklet Part 3 (the Thailand source). Use S P E C from Revision Guide Section 7 for question 1(i).</p>
+  <div class="card" id="ddCard"></div>
+  <div class="card" id="taCard">
+    <h3>2. Table analyst</h3>
+    <p><b>Analyse the relationship between government spending on education and the real GDP growth rate shown in the table. [5]</b></p>
+    <div class="grid2">
+      <div>
+        <table class="sched">
+          <tr><th>Country</th><th>Spending on education (% of GDP)</th><th>Real GDP growth (%)</th></tr>
+          <tr><td>A</td><td>2.0</td><td>1.5</td></tr>
+          <tr><td>B</td><td>3.0</td><td>2.5</td></tr>
+          <tr><td>C</td><td>4.0</td><td>3.8</td></tr>
+          <tr><td>D</td><td>5.0</td><td>1.2</td></tr>
+          <tr><td>E</td><td>6.0</td><td>5.0</td></tr>
+        </table>
+        <p class="muted">Imaginary data for practice.</p>
+      </div>
+      <div class="chartbox" id="taChart"></div>
+    </div>
+    <p style="margin-top:12px"><b>Tick every sentence that would earn a mark.</b> Then check.</p>
+    <div id="taList"></div>
+    <div class="flex" style="margin-top:8px"><button class="btn" id="taCheck">Check</button><button class="btn alt hide" id="taAgain">Try again</button></div>
+    <div id="taFb"></div>
+  </div>
+</section>
+
+<!-- ============ TAB 6: SECTION B ============ -->
+<section class="panel" id="p5">
+  <div class="phead"><span class="pn" aria-hidden="true">6</span><div><h2>Section B builder</h2>
+  <p class="lead">Build each answer: tap a sentence to place it in the next empty slot; tap a filled slot to send it back. One sentence in every set does not belong, so leave it out. Then read the model and write the very similar question that appears beside it on paper, in your revision pack.</p></div></div>
+  <p class="paper"><b>On paper:</b> Practice Booklet Part 4. Choose your question on parts (c) and (d): they are worth 14 of the 20 marks.</p>
+  <p style="margin:0 0 6px;font-weight:700;color:var(--navy)">Choose a scenario <span class="muted" id="bCount" style="font-weight:400;margin-left:8px"></span></p>
+  <div class="seg" id="bScen" style="margin-bottom:12px"></div>
+  <div id="bStem"></div>
+  <div class="seg" id="bTasks" style="margin-bottom:14px"></div>
+  <div class="card" id="bCard"></div>
+</section>
+</main>
+<footer>SISB Nonthaburi · Humanities · IGCSE Economics 0455 · Grade 10 Mid-Year Revision · Works with the Revision Guide and Practice Booklet. Table analyst data are imaginary.</footer>
+
+<script>
+(function(){
+'use strict';
+const NAVY='#002F6C',BLUE='#008BCC',ORANGE='#FF8F1C',GREY='#6B7280';
+const $=id=>document.getElementById(id);
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi,step=1)=>lo+step*Math.floor(Math.random()*((hi-lo)/step+1));
+const th=n=>Number(n).toLocaleString('en-US',{maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- tracker ---------- */
+function track(act,detail){try{const T=window.SISB_TRACKER||window.SISBTracker;if(T&&typeof T.log==='function')T.log('G10 MYE',act,detail||'');}catch(e){}}
+/* Usage events for the teacher sheet (one row per label per visit):
+   "G10 MYE n Tab" = opened and scored this visit; "(depth 10/30/60)" = points earned in that tab so far;
+   "(complete)" = tab finished. */
+const DEPTH=[10,30,60];
+function usage(t,before,after){const n=`G10 MYE ${t+1} ${TABS[t]}`;track(n,`Started. Index ${IX.v.toFixed(1)}`);
+  DEPTH.forEach(d=>{if(before<d&&after>=d)track(`${n} (depth ${d})`,`${after} points earned in this activity`);});}
+
+/* ---------- tabs + progress ---------- */
+const TABS=['Key terms','Calculations','Paper 1 quick-fire','Shifts and diagrams','Section A skills','Section B builder'];
+const TSUB=['Flashcards and a 15-question quiz','10 types, new numbers every time','12 questions a round','10 events to work through','Definitions and data','12 answers to build'];
+const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const KEY='sisb-g10-mye-index-v1';
+let IX={v:100,hist:[100],pts:[0,0,0,0,0,0],best:100,done:[]};
+try{const raw=localStorage.getItem(KEY);if(raw){const o=JSON.parse(raw);if(o&&typeof o.v==='number'&&Array.isArray(o.hist))IX=Object.assign(IX,o);}}catch(e){}
+const done=new Set(IX.done||[]);let streak=0;
+function save(){try{IX.done=[...done];localStorage.setItem(KEY,JSON.stringify(IX));}catch(e){}}
+TABS.forEach((t,i)=>{const b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.id='tab'+i;
+  b.innerHTML=`<span class="tr"><span class="n">${i+1}</span><span class="tp" id="tp${i}"></span></span><span>${t}</span><span class="ts">${TSUB[i]}</span><span class="tst" id="ts${i}">Not started</span>`;b.onclick=()=>show(i);$('tabs').appendChild(b);});
+function show(i){document.querySelectorAll('.tab').forEach((b,j)=>{b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i);});document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('on',j===i));
+  const t=$('tab'+i);if(t&&t.scrollIntoView&&window.innerWidth<820)t.scrollIntoView({inline:'center',block:'nearest',behavior:reduce?'auto':'smooth'});
+  const m=document.querySelector('main');if(m&&window.scrollY>m.offsetTop)window.scrollTo({top:m.offsetTop-8,behavior:reduce?'auto':'smooth'});}
+function spark(){const h=IX.hist.slice(-40),mn=Math.min(...h),mx=Math.max(...h,mn+5),W=300,H=64,n=h.length;
+  const pts=h.map((v,i)=>[n<2?W:i/(n-1)*W,H-6-(v-mn)/(mx-mn)*(H-14)]);
+  const line=pts.map(p=>p.map(x=>x.toFixed(1)).join(',')).join(' ');
+  const last=pts[pts.length-1];
+  $('ixSpark').innerHTML=`<polygon points="0,${H} ${line} ${W},${H}" fill="rgba(43,196,106,.16)"/><polyline points="${line}" fill="none" stroke="#2BC46A" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><circle cx="${last[0]}" cy="${last[1]}" r="4" fill="#FF8F1C"/>`;}
+function renderIX(){$('ixVal').textContent=IX.v.toFixed(1);$('ixBest').innerHTML=IX.best>100?`Best: ${IX.best.toFixed(1)}`:'';
+  IX.pts.forEach((p,i)=>{const e=$('tp'+i);e.textContent=p?`▲ ${p}`:'';e.classList.toggle('up',p>0);});
+  done.forEach(i=>$('tab'+i).classList.add('done'));
+  IX.pts.forEach((p,i)=>{$('ts'+i).textContent=done.has(i)?'Complete ✓':p>0?'In progress':'Not started';});
+  $('ixMiniV').textContent=IX.v.toFixed(1);$('ixMiniS').textContent=streak>=3?`Bull run ×${streak}`:'';
+  $('progTxt').textContent=`${done.size} of 6 activities complete`;
+  $('ixStreak').textContent=streak>=3?`Bull run: ${streak} right in a row`:`Streak: ${streak}`;$('ixStreak').classList.toggle('hot',streak>=3);spark();}
+function award(tab,pts,why){IX.v=Math.round((IX.v+pts)*10)/10;IX.hist.push(IX.v);if(IX.hist.length>200)IX.hist=IX.hist.slice(-200);IX.pts[tab]+=pts;IX.best=Math.max(IX.best,IX.v);streak++;usage(tab,IX.pts[tab]-pts,IX.pts[tab]);
+  $('ixChg').textContent=`▲ +${pts.toFixed(1)}  ${why}`;$('ixChg').classList.add('up');
+  if(!reduce){const v=$('ixVal');v.classList.remove('bump');void v.offsetWidth;v.classList.add('bump');const f=document.createElement('span');f.className='flt';f.textContent='+'+pts;(boardVisible?$('ixFloat'):$('ixMini')).appendChild(f);setTimeout(()=>f.remove(),1200);}
+  renderIX();save();}
+function miss(){streak=0;$('ixChg').textContent='No points this time. Read the feedback, then try the next one.';$('ixChg').classList.remove('up');renderIX();}
+function complete(i,detail){if(done.has(i)){track(`G10 MYE ${i+1} ${TABS[i]} (complete)`,detail);return;}done.add(i);award(i,10,`${TABS[i]} complete`);$('tab'+i).classList.add('done');
+  const p=$('p'+i),bn=document.createElement('div');bn.className='bonus';bn.innerHTML=`<b>+10</b><span>${TABS[i]} complete. Your index gets a 10-point bonus. Keep going in this tab or try another one.</span>`;p.insertBefore(bn,p.querySelector('.paper').nextSibling);
+  track(`G10 MYE ${i+1} ${TABS[i]} (complete)`,detail);if(done.size===6)track('G10 MYE (all 6 complete)','All 6 activities complete');save();}
+let boardVisible=true;
+if('IntersectionObserver' in window){new IntersectionObserver(es=>{boardVisible=es[0].isIntersecting;$('ixMini').classList.toggle('off',boardVisible);},{threshold:0.15}).observe(document.querySelector('.index'));}
+show(0);renderIX();
+$('ixReset').onclick=()=>{if(!window.confirm||window.confirm('Reset your revision index to 100?')){IX={v:100,hist:[100],pts:[0,0,0,0,0,0],best:IX.best,done:[]};done.clear();streak=0;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('done'));document.querySelectorAll('.bonus').forEach(b=>b.remove());$('ixChg').textContent='Answer a question to move it';$('ixChg').classList.remove('up');save();renderIX();}};
+
+/* ================= TAB 1: KEY TERMS ================= */
+const TERMS=[{"g":"The basic economic problem","t":"Scarcity","d":"Not having enough resources to satisfy everyone’s wants, because wants are unlimited and resources are limited."},{"g":"The basic economic problem","t":"Economic good","d":"A good that uses scarce resources to make, so it has an opportunity cost. Its supply is limited."},{"g":"The basic economic problem","t":"Free good","d":"A good that does not use scarce resources, so it has no opportunity cost, e.g. air or sea water."},{"g":"The basic economic problem","t":"Factors of production","d":"The resources used to produce goods and services: land, labour, capital and enterprise."},{"g":"The basic economic problem","t":"Land","d":"Natural resources, e.g. fields, forests, minerals and the sea. Its reward is rent."},{"g":"The basic economic problem","t":"Labour","d":"Human effort, both physical and mental, used in production. Its reward is wages."},{"g":"The basic economic problem","t":"Capital","d":"Human-made goods used to produce other goods and services, e.g. machines and buildings. Its reward is interest."},{"g":"The basic economic problem","t":"Enterprise","d":"Organising the other factors of production and taking the risk of production. Its reward is profit."},{"g":"The basic economic problem","t":"Opportunity cost","d":"The best alternative given up when a choice is made."},{"g":"The basic economic problem","t":"Production possibility curve (PPC)","d":"A curve showing the maximum combinations of two products an economy can make when all its resources are fully and efficiently used."},{"g":"Markets and prices","t":"Price mechanism","d":"The way the forces of demand and supply set prices, which then decide how resources are allocated."},{"g":"Markets and prices","t":"Market economic system","d":"An economic system where resources are owned mainly by the private sector and allocated by the price mechanism."},{"g":"Markets and prices","t":"Mixed economic system","d":"An economic system where both the private sector and the public sector own resources and decide how they are used."},{"g":"Markets and prices","t":"Demand","d":"The willingness and ability to buy a product at a given price over a period of time."},{"g":"Markets and prices","t":"Supply","d":"The willingness and ability of producers to sell a product at a given price over a period of time."},{"g":"Markets and prices","t":"Market equilibrium","d":"The price and quantity where demand equals supply, so there is no pressure for the price to change."},{"g":"Markets and prices","t":"Excess demand","d":"When demand is greater than supply at the current price (a shortage). The price will tend to rise."},{"g":"Markets and prices","t":"Excess supply","d":"When supply is greater than demand at the current price (a surplus). The price will tend to fall."},{"g":"Markets and prices","t":"Price elasticity of demand (PED)","d":"How much the quantity demanded responds to a change in the product’s price. PED = % change in quantity demanded ÷ % change in price."},{"g":"Markets and prices","t":"Price elasticity of supply (PES)","d":"How much the quantity supplied responds to a change in the product’s price. PES = % change in quantity supplied ÷ % change in price."},{"g":"Market failure and intervention","t":"Market failure","d":"When the market forces of demand and supply fail to allocate resources efficiently."},{"g":"Market failure and intervention","t":"External cost","d":"A cost of production or consumption paid by a third party who is not involved, e.g. pollution from a factory."},{"g":"Market failure and intervention","t":"External benefit","d":"A benefit of production or consumption received by a third party who is not involved, e.g. fewer people catching a disease after others are vaccinated."},{"g":"Market failure and intervention","t":"Merit good","d":"A product that is under-consumed in a free market because people underestimate its benefits, e.g. education."},{"g":"Market failure and intervention","t":"Demerit good","d":"A product that is over-consumed in a free market because people underestimate how harmful it is, e.g. cigarettes."},{"g":"Market failure and intervention","t":"Public good","d":"A product that is non-excludable and non-rival, so a free market will not provide it, e.g. street lights."},{"g":"Market failure and intervention","t":"Indirect tax","d":"A tax on spending on goods and services, e.g. VAT. It raises firms’ costs, so supply shifts to the left."},{"g":"Market failure and intervention","t":"Subsidy","d":"A payment by the government to producers (or consumers) that lowers costs and encourages production or consumption."},{"g":"Market failure and intervention","t":"Maximum price","d":"A price limit set by the government below the equilibrium price, so the price cannot rise above it."},{"g":"Market failure and intervention","t":"Minimum price","d":"A price floor set by the government above the equilibrium price, so the price cannot fall below it."},{"g":"Money, banks and workers","t":"Money","d":"Anything that is generally accepted as a means of payment."},{"g":"Money, banks and workers","t":"Functions of money","d":"Medium of exchange, unit of account (measure of value), store of value and standard of deferred payment."},{"g":"Money, banks and workers","t":"Central bank","d":"The bank that issues the currency, acts as the government’s bank and the banks’ bank, and sets the interest rate, e.g. the Bank of Thailand."},{"g":"Money, banks and workers","t":"Commercial bank","d":"A profit-making bank that accepts deposits, makes loans and helps customers make payments."},{"g":"Money, banks and workers","t":"Interest rate","d":"The price of borrowing money and the reward for saving, shown as a percentage per year."},{"g":"Money, banks and workers","t":"Saving","d":"The part of income that is not spent."},{"g":"Money, banks and workers","t":"Specialisation","d":"When a person, firm, region or country concentrates on producing a particular product or doing a particular task."},{"g":"Money, banks and workers","t":"Division of labour","d":"Splitting production into separate tasks, with each worker doing one task."},{"g":"Money, banks and workers","t":"Trade union","d":"An organisation of workers that represents its members to improve their pay, working conditions and job security."},{"g":"Money, banks and workers","t":"Collective bargaining","d":"When a trade union negotiates with employers on behalf of all its members."},{"g":"Firms and market structure","t":"Productivity","d":"Output per worker (or per factor of production) in a period of time."},{"g":"Firms and market structure","t":"Horizontal merger","d":"When two firms at the same stage of production in the same industry join together."},{"g":"Firms and market structure","t":"Vertical merger","d":"When two firms at different stages of production in the same industry join together (backward: towards raw materials; forward: towards the consumer)."},{"g":"Firms and market structure","t":"Conglomerate merger","d":"When two firms in different industries join together."},{"g":"Firms and market structure","t":"Internal economies of scale","d":"Falls in a firm’s average cost that come from the firm itself growing larger, e.g. buying in bulk."},{"g":"Firms and market structure","t":"Diseconomies of scale","d":"Rises in average cost when a firm grows too large, e.g. because of poor communication."},{"g":"Firms and market structure","t":"Fixed costs","d":"Costs that do not change when output changes and must be paid even when output is zero, e.g. rent."},{"g":"Firms and market structure","t":"Variable costs","d":"Costs that change directly with output, e.g. raw materials."},{"g":"Firms and market structure","t":"Average total cost (ATC)","d":"Total cost divided by output: the cost of making one unit."},{"g":"Firms and market structure","t":"Total revenue","d":"The money a firm receives from selling its output: price × quantity sold."},{"g":"Firms and market structure","t":"Monopoly","d":"A market with a single supplier, where high barriers to entry stop new firms from joining."},{"g":"Firms and market structure","t":"Competitive market","d":"A market with many firms, where no one firm can control the price and firms can enter and leave easily."},{"g":"Government and the macroeconomy","t":"Fiscal policy","d":"Changes in government spending and taxation to influence the economy."},{"g":"Government and the macroeconomy","t":"Monetary policy","d":"Changes in the interest rate, the money supply and the exchange rate to influence the economy."},{"g":"Government and the macroeconomy","t":"Supply-side policy","d":"Measures that increase the productive capacity of the economy, e.g. education and training, privatisation and deregulation."},{"g":"Government and the macroeconomy","t":"Direct tax","d":"A tax on income and wealth, paid directly to the government, e.g. income tax."},{"g":"Government and the macroeconomy","t":"Budget deficit","d":"When government spending is greater than tax revenue in a year."},{"g":"Government and the macroeconomy","t":"Total demand","d":"Total spending on an economy’s goods and services: by households, firms, the government and foreigners."},{"g":"Government and the macroeconomy","t":"Economic growth","d":"An increase in the real GDP of an economy."},{"g":"Government and the macroeconomy","t":"Gross domestic product (GDP)","d":"The total value of output produced in a country in a year."},{"g":"Government and the macroeconomy","t":"Recession","d":"A fall in real GDP for two quarters (six months) in a row."},{"g":"Government and the macroeconomy","t":"Inflation","d":"A sustained rise in the general price level."},{"g":"Government and the macroeconomy","t":"Unemployment rate","d":"The percentage of the labour force that is willing and able to work but has no job. = unemployed ÷ labour force × 100."}];
+const GROUPS=['All',...new Set(TERMS.map(t=>t.g))];
+(function(){const items=shuffle(TERMS.slice()).slice(0,30).map(t=>`<b>${esc(t.t)}</b>${esc(t.d)}`).join('<span class="sep">▲</span>');$('ticker').innerHTML=(items+'<span class="sep">▲</span>').repeat(2);})();
+const SHORT={'The basic economic problem':'Basic problem','Markets and prices':'Markets','Market failure and intervention':'Market failure','Money, banks and workers':'Money & workers','Firms and market structure':'Firms','Government and the macroeconomy':'Government'};
+let fcG='All',fcList=[],fcI=0,fcBack=false;
+GROUPS.forEach(g=>{const b=document.createElement('button');b.textContent=g==='All'?'All 63':SHORT[g];b.onclick=()=>{fcG=g;[...$('fcGroups').children].forEach(x=>x.classList.toggle('on',x===b));fcList=TERMS.filter(t=>g==='All'||t.g===g);fcI=0;fcBack=false;drawFlash();};$('fcGroups').appendChild(b);});
+$('fcGroups').children[0].classList.add('on');fcList=TERMS.slice();
+function drawFlash(){const t=fcList[fcI],f=$('flash');f.classList.toggle('back',fcBack);
+  f.innerHTML=fcBack?`<div class="term" style="font-size:17px;margin-bottom:8px">${esc(t.t)}</div><div class="def">${esc(t.d)}</div><div class="hint">Tap to turn back</div>`:`<div class="pill o">${esc(SHORT[t.g])}</div><div class="term" style="margin-top:10px">${esc(t.t)}</div><div class="hint">Say the definition out loud, then tap to check</div>`;
+  $('fcPos').textContent=`${fcI+1} / ${fcList.length}`;}
+function flipFlash(){const f=$('flash');if(reduce||!f.animate){fcBack=!fcBack;drawFlash();return;}f.animate([{transform:'rotateY(0deg)'},{transform:'rotateY(90deg)'}],{duration:130,easing:'ease-in'}).onfinish=()=>{fcBack=!fcBack;drawFlash();f.animate([{transform:'rotateY(-90deg)'},{transform:'rotateY(0deg)'}],{duration:150,easing:'ease-out'});};}
+$('flash').onclick=flipFlash;
+$('flash').onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flipFlash();}};
+$('fcNext').onclick=()=>{fcI=(fcI+1)%fcList.length;fcBack=false;drawFlash();};
+$('fcPrev').onclick=()=>{fcI=(fcI-1+fcList.length)%fcList.length;fcBack=false;drawFlash();};
+$('fcShuf').onclick=()=>{shuffle(fcList);fcI=0;fcBack=false;drawFlash();};
+drawFlash();
+
+// quiz: definition -> which term? Distractors from the same topic group.
+const hideTerm=d=>d.replace(/\s*(PED|PES) = .*$/,'').replace(/\s*= unemployed.*$/,'');
+let tq=[],tqI=0,tqS=0;
+function startTQ(){tq=shuffle(TERMS.slice()).slice(0,15).map(t=>{const same=shuffle(TERMS.filter(x=>x.g===t.g&&x.t!==t.t)).slice(0,3);return{t,opts:shuffle([t,...same])};});tqI=0;tqS=0;drawTQ();}
+function drawTQ(){const c=$('tqCard');
+  if(tqI>=tq.length){c.innerHTML=`<h3>2. Which term? ${tqS} / ${tq.length}</h3><p>${tqS>=12?'Strong work. Now try writing three of them from memory.':'Go back to the flashcards for the topics you missed, then try again.'}</p><button class="btn alt" id="tqAgain">New round</button>`;$('tqAgain').onclick=startTQ;complete(0,`Key terms quiz ${tqS}/${tq.length}`);return;}
+  const q=tq[tqI];
+  c.innerHTML=`<div class="flex" style="justify-content:space-between"><h3 style="margin:0">2. Which term? Question ${tqI+1} of ${tq.length}</h3><span class="score">Score: ${tqS}</span></div><p class="qtext">“${esc(hideTerm(q.t.d))}”</p><div class="opts" id="tqO"></div><div id="tqF"></div>`;
+  q.opts.forEach(o=>{const b=document.createElement('button');b.className='opt';b.textContent=o.t;b.onclick=()=>{
+    $('tqO').querySelectorAll('.opt').forEach(x=>x.disabled=true);const ok=o===q.t;if(ok){tqS++;award(0,1,'Key terms');}else miss();b.classList.add(ok?'ok':'no');
+    if(!ok)[...$('tqO').children].find(x=>x.textContent===q.t.t).classList.add('ok');
+    $('tqF').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${esc(q.t.t)}:</b> ${esc(q.t.d)}</div><button class="btn" style="margin-top:10px" id="tqN">${tqI<tq.length-1?'Next':'See score'}</button>`;$('tqN').onclick=()=>{tqI++;drawTQ();};};$('tqO').appendChild(b);});
+}
+startTQ();
+
+/* ================= TAB 2: CALCULATIONS ================= */
+// Each generator returns {tag, q, ans, unit, tol, hint, work}
+const GEN={
+  'Share':()=>{const tot=ri(20,90,5),pc=pick([12.5,15,17.5,22.5,27.5,32.5,35,42.5]),c=pick(['Country K','Country M','Country P']),s=pick(['manufacturing','tourism','agriculture','financial services']);
+    const a=+(tot*pc/100).toFixed(3);return{tag:'Share of a total',q:`${c} has a GDP of $${tot} billion. ${s[0].toUpperCase()+s.slice(1)} makes up ${pc}% of GDP. Calculate the value of ${s} output.`,ans:a,unit:'$ billion',tol:.01,hint:'Part = % ÷ 100 × total.',work:`${pc} ÷ 100 × $${tot} billion = <b>$${th(a)} billion</b>`};},
+  '% change':()=>{const old=ri(800,4000,100),pc=pick([-25,-20,-12.5,-10,-5,5,8,12.5,15,20,25,30]),nw=old*(1+pc/100),it=pick(['visitors to a museum in Ayutthaya','bowls of khao soi sold by a stall','bicycles rented on Koh Samui']);
+    return{tag:'Percentage change',q:`Last year there were ${th(old)} ${it}. This year there were ${th(nw)}. Calculate the percentage change.`,ans:pc,unit:'%',tol:.05,hint:'(new − old) ÷ old × 100. Use a minus sign for a fall.',work:`(${th(nw)} − ${th(old)}) ÷ ${th(old)} × 100 = <b>${pc>0?'+':''}${pc}%</b>`};},
+  'PED':()=>{const p1=pick([20,40,50,80,100,200]),pp=pick([10,20,25,50]),up=Math.random()<.5,qp=pick([5,10,15,20,30,40,50,60]),q1=pick([200,400,500,800,1000]);
+    const p2=p1*(1+(up?pp:-pp)/100),q2=q1*(1+(up?-qp:qp)/100),ped=+((up?-qp:qp)/(up?pp:-pp)).toFixed(2),g=pick(['iced tea','phone cases','cinema tickets','mangoes']);
+    return{tag:'PED',q:`The price of ${g} ${up?'rises':'falls'} from ${p1} baht to ${th(p2)} baht. The quantity demanded ${up?'falls':'rises'} from ${th(q1)} to ${th(q2)} a week. Calculate the PED.`,ans:ped,unit:'',tol:.011,hint:'PED = % change in quantity demanded ÷ % change in price. Keep the minus sign.',
+      work:`% change in Qd = (${th(q2)} − ${th(q1)}) ÷ ${th(q1)} × 100 = ${up?'−':'+'}${qp}%<br>% change in price = (${th(p2)} − ${p1}) ÷ ${p1} × 100 = ${up?'+':'−'}${pp}%<br>PED = ${up?'−':'+'}${qp} ÷ ${up?'+':'−'}${pp} = <b>${ped}</b>: demand is price <b>${Math.abs(ped)>1?'elastic':Math.abs(ped)<1?'inelastic':'unit elastic'}</b>.`};},
+  'PES':()=>{const p1=pick([20,40,50,60,80]),pp=pick([10,20,25,50]),qp=pick([5,10,15,20,30,40,50,60]),q1=pick([100,200,500,1000]);
+    const p2=p1*(1+pp/100),q2=q1*(1+qp/100),pes=+(qp/pp).toFixed(2),g=pick(['rambutan','handmade baskets','printed T-shirts','orchids']);
+    return{tag:'PES',q:`The price of ${g} rises from ${p1} baht to ${th(p2)} baht. The quantity supplied rises from ${th(q1)} to ${th(q2)}. Calculate the PES.`,ans:pes,unit:'',tol:.011,hint:'PES = % change in quantity supplied ÷ % change in price.',
+      work:`% change in Qs = ${qp}%; % change in price = ${pp}%. PES = ${qp} ÷ ${pp} = <b>${pes}</b>: supply is price <b>${pes>1?'elastic':pes<1?'inelastic':'unit elastic'}</b>.`};},
+  'Revenue':()=>{const p=ri(15,120,5),q=ri(200,3000,50);return{tag:'Total revenue',q:`At equilibrium, the price of a bowl of noodles is ${p} baht and ${th(q)} bowls are sold a day. Calculate total consumer spending (the firms’ total revenue) a day.`,ans:p*q,unit:'baht',tol:.5,hint:'Total revenue = price × quantity.',work:`${p} × ${th(q)} = <b>${th(p*q)} baht</b>`};},
+  'ATC':()=>{const fc=ri(5000,40000,1000),vc=ri(10,80,5),q=pick([100,200,250,400,500,800,1000]),tc=fc+vc*q,atc=+(tc/q).toFixed(2);
+    return{tag:'Average total cost',q:`A firm has fixed costs of ${th(fc)} baht and a variable cost of ${vc} baht per unit. It produces ${th(q)} units. Calculate its average total cost.`,ans:atc,unit:'baht',tol:.011,hint:'Total cost = fixed + (variable cost per unit × output). ATC = total cost ÷ output.',work:`TC = ${th(fc)} + (${vc} × ${th(q)}) = ${th(tc)} baht. ATC = ${th(tc)} ÷ ${th(q)} = <b>${th(atc)} baht</b>`};},
+  'Profit':()=>{const p=ri(30,150,5),q=ri(100,1500,50),tc=Math.round(p*q*pick([.6,.75,.85,.95,1.1,1.25])/100)*100,pr=p*q-tc;
+    return{tag:'Profit',q:`A firm sells ${th(q)} units at ${p} baht each. Its total cost is ${th(tc)} baht. Calculate its profit. (Use a minus sign for a loss.)`,ans:pr,unit:'baht',tol:.5,hint:'Profit = total revenue − total cost.',work:`TR = ${p} × ${th(q)} = ${th(p*q)} baht. Profit = ${th(p*q)} − ${th(tc)} = <b>${th(pr)} baht</b>${pr<0?' (a loss)':''}`};},
+  'Budget':()=>{const rev=ri(1500,3500,50),sp=rev+pick([-300,-150,100,250,400,650,800]),b=rev-sp;
+    return{tag:'Budget position',q:`A government collects ${th(rev)} billion baht in tax revenue and spends ${th(sp)} billion baht. Calculate its budget position. (Use a minus sign for a deficit.)`,ans:b,unit:'billion baht',tol:.5,hint:'Budget position = tax revenue − government spending.',work:`${th(rev)} − ${th(sp)} = <b>${th(b)} billion baht</b>: a budget <b>${b<0?'deficit':'surplus'}</b>.`};},
+  'Indirect tax':()=>{const it={VAT:ri(300,900,50),'excise duty':ri(100,500,50),'import duties':ri(30,200,10)},dt={'income tax':ri(200,700,50),'corporate income tax':ri(200,700,50)};
+    const all=shuffle([...Object.entries(it),...Object.entries(dt)]),a=Object.values(it).reduce((x,y)=>x+y,0);
+    return{tag:'Indirect taxes',q:`A government collects these taxes (million baht): ${all.map(([k,v])=>`${k} ${th(v)}`).join('; ')}. Calculate its revenue from indirect taxes.`,ans:a,unit:'million baht',tol:.5,hint:'Indirect taxes are taxes on spending: VAT, excise duties and import duties. Income taxes are direct.',work:`VAT ${th(it.VAT)} + excise duty ${th(it['excise duty'])} + import duties ${th(it['import duties'])} = <b>${th(a)} million baht</b>`};},
+  'Unemployment':()=>{const lf=ri(10,60,2),r=pick([1,1.5,2,2.5,3,4,5,6,8]),u=+(lf*r/100).toFixed(3),pop=Math.round(lf*1.6);
+    return{tag:'Unemployment rate',q:`A country has a population of ${pop} million and a labour force of ${lf} million. ${th(u)} million people are unemployed. Calculate the unemployment rate.`,ans:r,unit:'%',tol:.011,hint:'Unemployment rate = unemployed ÷ labour force × 100. Not the population!',work:`${th(u)} ÷ ${lf} × 100 = <b>${r}%</b>. (Dividing by the population, ${pop} million, is the most common mistake.)`};},
+};
+const CT=['Any',...Object.keys(GEN)];let cType='Any',cCur=null,cRight=0,cTried=false;
+CT.forEach(t=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{cType=t;[...$('cTypes').children].forEach(x=>x.classList.toggle('on',x===b));newCalc();};$('cTypes').appendChild(b);});
+$('cTypes').children[0].classList.add('on');
+function drawTally(){$('cTally').innerHTML=Array.from({length:8},(_,i)=>`<i class="${i<cRight?'on':''}"></i>`).join('');$('cScore').textContent=`Correct: ${cRight}`;}
+function newCalc(){const g=GEN[cType==='Any'?pick(Object.keys(GEN)):cType];cCur=g();cTried=false;
+  $('cTag').textContent=cCur.tag;$('cQ').textContent=cCur.q;$('cUnit').textContent=cCur.unit;$('cHint').textContent='';$('cFb').innerHTML='';$('cIn').value='';$('cIn').disabled=false;$('cCheck').disabled=false;}
+function parseNum(s){s=String(s).trim().replace(/[,\s]/g,'').replace(/[−–]/g,'-').replace(/%|baht|\$/gi,'');return s===''?NaN:Number(s);}
+$('cCheck').onclick=()=>{const v=parseNum($('cIn').value);
+  if(isNaN(v)){$('cFb').innerHTML='<div class="fb no">Type a number (you can use a minus sign).</div>';return;}
+  const ok=Math.abs(v-cCur.ans)<=Math.max(cCur.tol,Math.abs(cCur.ans)*0.001);
+  if(ok){cRight++;award(1,cTried?1:2,cTried?'Calculation (second try)':'Calculation');drawTally();$('cIn').disabled=true;$('cCheck').disabled=true;$('cFb').innerHTML=`<div class="fb ok"><b>Correct.</b></div><div class="work">${cCur.work}</div>`;if(cRight>=8)complete(1,'Calculations: 8 correct');}
+  else if(!cTried){cTried=true;miss();$('cHint').textContent='Hint: '+cCur.hint;$('cFb').innerHTML='<div class="fb no">Not yet. Read the hint and try once more.</div>';}
+  else{$('cIn').disabled=true;$('cCheck').disabled=true;$('cFb').innerHTML=`<div class="fb no">Here is the working. Try a new question of the same type.</div><div class="work">${cCur.work}</div>`;}
+};
+$('cIn').addEventListener('keydown',e=>{if(e.key==='Enter')$('cCheck').click();});
+$('cNew').onclick=newCalc;drawTally();newCalc();
+
+/* ================= TAB 3: QUICK-FIRE ================= */
+const MCQ=[["Which question is about “how to produce”?",["Should a car firm use robots or workers on its assembly line?","Should Thailand produce more rubber or more rice?","Should medicine be free for older people?","Should a firm sell to Japan or to Vietnam?"],"“How” is about the method of production, such as the mix of labour and capital."],["Which is a reward to land?",["rent","interest","profit","wages"],"Land earns rent; capital earns interest; enterprise earns profit; labour earns wages."],["An economy produces at a point inside its PPC. What does this show?",["some resources are unemployed or used inefficiently","the economy is growing","the economy cannot produce more","the PPC has shifted inwards"],"A point inside the curve means output could rise without new resources: some resources are idle."],["Which would shift a country’s PPC outwards?",["training that makes workers more productive","unemployed workers finding jobs","a rise in the price of exports","skilled workers emigrating"],"More or better resources (here: better-quality labour) raise productive capacity."],["Which is a feature of a market economic system?",["resources are allocated by the price mechanism","the government decides what to produce","most firms are owned by the state","prices are fixed by law"],"In a market system private owners decide, guided by prices."],["A fall in the cost of raw materials for instant noodles will most likely cause",["supply to shift right, the price to fall and quantity to rise","supply to shift left, the price to rise and quantity to fall","demand to shift right, the price and quantity to rise","demand to shift left, the price and quantity to fall"],"Lower costs make each unit cheaper to produce, so firms supply more at every price."],["The price of a product rises by 10% and total revenue rises. What does this show about PED?",["demand is price inelastic","demand is price elastic","demand is unit elastic","demand is perfectly elastic"],"With inelastic demand quantity falls by a smaller % than the price rises, so revenue rises."],["Price falls from 80 to 60 baht and quantity demanded rises from 100 to 150. What is the PED?",["−2.0","−0.5","−1.5","−0.25"],"% change in Qd = +50%; % change in price = −25%. PED = 50 ÷ −25 = −2.0 (elastic)."],["Why is the supply of durian price inelastic in the short run?",["durian trees take years to grow","durian can be stored for a long time","farmers have a lot of spare capacity","many firms supply durian"],"Supply cannot respond quickly when production takes a long time."],["A government sets a maximum price for rice below the equilibrium price. What is most likely?",["a shortage of rice","a surplus of rice","a rise in the price of rice","no change in the market"],"Below equilibrium, demand extends and supply contracts, so there is excess demand."],["An indirect tax is placed on sugary drinks. What happens in the market?",["supply shifts left; price rises; quantity falls","supply shifts right; price falls; quantity rises","demand shifts left; price falls; quantity falls","demand shifts right; price rises; quantity rises"],"The tax raises costs, so supply decreases. Thailand has a sugar tax on drinks for this reason."],["Why are demerit goods over-consumed in a free market?",["consumers underestimate the harm they cause","they have no opportunity cost","they are public goods","their supply is perfectly inelastic"],"Information failure: people do not see the full harm, so they buy too much."],["Which is an example of a mixed economy in action?",["private hospitals and government hospitals both treat patients","all hospitals are run by the state","all hospitals are owned privately","the government sets all prices"],"A mixed economy has both the private and the public sector."],["Which function of money is used when a shop shows prices for its goods?",["unit of account","store of value","medium of exchange","standard of deferred payment"],"Prices measure value, so money is acting as a unit of account."],["The central bank raises the interest rate. What is most likely to happen?",["households save more and borrow less","households save less and borrow more","firms invest more","the cost of loans falls"],"Saving is better rewarded and borrowing costs more."],["Which is most likely to raise a worker’s wage?",["the worker gains skills that are in high demand","many workers can do the same job","the worker’s trade union becomes weaker","demand for the product the worker makes falls"],"Scarce, in-demand skills raise the demand for, and limit the supply of, that labour."],["Which is a disadvantage of specialisation for a worker?",["work can become repetitive and boring","the worker becomes more skilled","the worker produces more","the worker may earn higher pay"],"Doing one task again and again can reduce motivation."],["Two hotel chains merge. What type of merger is this?",["horizontal","forward vertical","backward vertical","conglomerate"],"Both firms are at the same stage of production in the same industry."],["Which is an internal economy of scale?",["a large firm gets a discount for buying in bulk","a new road is built to an industrial estate","a local college trains workers for the industry","a firm’s managers find it hard to communicate"],"Bulk buying (purchasing economies) comes from the firm’s own size. Roads and colleges are external; poor communication is a diseconomy."],["A firm’s output rises from 100 to 200 units. What happens to its average fixed cost?",["it halves","it doubles","it stays the same","it falls to zero"],"Fixed cost stays the same, so spreading it over twice the output halves AFC."],["Which is a direct tax?",["income tax","VAT","excise duty on alcohol","import duty"],"A direct tax is on income or wealth. The others are taxes on spending (indirect)."],["Which is a monetary policy measure?",["cutting the interest rate","raising income tax","spending more on roads","cutting corporation tax"],"Monetary policy uses interest rates, the money supply and the exchange rate. The others are fiscal."],["Which is a supply-side policy?",["privatising a state-owned firm","raising the interest rate","raising VAT","printing more money"],"Privatisation aims to raise efficiency and productive capacity."],["What is most likely to cause a recession?",["a large fall in total demand","a rise in productivity","the discovery of new oil reserves","a fall in the interest rate"],"If total spending falls, firms cut output and real GDP falls."]];
+let mI=0,mS=0,mO=[],mPace=false,mTimer=null;
+function startMCQ(){mO=shuffle(MCQ.slice()).slice(0,12).map(m=>({q:m[0],opts:shuffle(m[1].map((t,i)=>({t,ok:i===0}))),why:m[2]}));mI=0;mS=0;drawMCQ();}
+function stopTimer(){if(mTimer){clearInterval(mTimer);mTimer=null;}}
+function drawMCQ(){const c=$('mcqCard');stopTimer();
+  if(mI>=mO.length){c.innerHTML=`<h3>Round complete: ${mS} / ${mO.length}</h3><p>${mS>=10?'Excellent. Try another round: the questions change.':'Note the topics you missed and check them in the Revision Guide, then try another round.'}</p><button class="btn alt" id="mAgain">New round</button>`;$('mAgain').onclick=startMCQ;complete(2,`Paper 1 quick-fire ${mS}/${mO.length}`);return;}
+  const m=mO[mI];
+  c.innerHTML=`<div class="flex" style="justify-content:space-between"><span class="pill">Question ${mI+1} of ${mO.length}</span><label class="pace"><input type="checkbox" id="mPace"${mPace?' checked':''}> Exam pace: 1 minute per question</label><span class="score">Score: ${mS}</span></div><div class="timer${mPace?'':' hide'}" id="mT"><i></i></div><p class="qtext">${esc(m.q)}</p><div class="opts col" id="mO"></div><div id="mF"></div>`;
+  let answered=false;
+  const reveal=(o,b)=>{answered=true;stopTimer();$('mO').querySelectorAll('.opt').forEach(x=>x.disabled=true);
+    if(o&&o.ok){mS++;award(2,1,'Paper 1 question');}else miss();
+    if(b)b.classList.add(o.ok?'ok':'no');if(!o||!o.ok)$('mO').children[m.opts.findIndex(x=>x.ok)].classList.add('ok');
+    $('mF').innerHTML=`<div class="fb ${o&&o.ok?'ok':'no'}">${o?'':'<b>Time’s up.</b> In the exam, move on and come back later. '}${esc(m.why)}</div><button class="btn" style="margin-top:10px" id="mN">${mI<mO.length-1?'Next':'See score'}</button>`;$('mN').onclick=()=>{mI++;drawMCQ();};};
+  m.opts.forEach((o,j)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="lt">${'ABCD'[j]}</span><span>${esc(o.t)}</span>`;b.onclick=()=>reveal(o,b);$('mO').appendChild(b);});
+  const startT=()=>{stopTimer();const t0=Date.now(),bar=$('mT');bar.classList.remove('hide');mTimer=setInterval(()=>{const left=1-(Date.now()-t0)/60000;bar.querySelector('i').style.width=Math.max(0,left*100)+'%';bar.classList.toggle('low',left<.25);if(left<=0&&!answered)reveal(null,null);},250);};
+  $('mPace').onchange=e=>{mPace=e.target.checked;if(mPace&&!answered)startT();else{stopTimer();$('mT').classList.add('hide');}};
+  if(mPace)startT();
+}
+startMCQ();
+
+/* ================= TAB 4: SHIFTS ================= */
+// sd: curve D|S|N, dir L|R, eff: 'PupQup','PdnQup','PupQdn','PdnQdn'. ppc: out|in|inside
+const EV=[
+  {k:'sd',m:'Market: restaurant meals in Bangkok',e:'Incomes in Thailand rise.',c:'D',d:'R',f:'PupQup',why:'Higher incomes mean people can afford to eat out more at every price, so demand increases.'},
+  {k:'sd',m:'Market: coffee sold in cafés',e:'The price of coffee beans falls.',c:'S',d:'R',f:'PdnQup',why:'Beans are a cost of production. Lower costs mean cafés can supply more at every price.'},
+  {k:'sd',m:'Market: sugary drinks',e:'The government raises the tax on sugary drinks.',c:'S',d:'L',f:'PupQdn',why:'An indirect tax raises each firm’s costs, so supply decreases.'},
+  {k:'sd',m:'Market: Thai durian',e:'The price of Thai durian rises.',c:'N',why:'A change in the product’s own price is a movement along the demand and supply curves, not a shift. Quantity demanded contracts.'},
+  {k:'ppc',m:'Country: Thailand',e:'More young people finish vocational training in engineering.',c:'out',why:'Better-quality labour raises productive capacity, so the PPC shifts outwards.'},
+  {k:'sd',m:'Market: bus rides in Chiang Mai',e:'The government gives a subsidy to bus companies.',c:'S',d:'R',f:'PdnQup',why:'A subsidy lowers firms’ costs, so supply increases: price falls and more rides are taken.'},
+  {k:'sd',m:'Market: mangoes',e:'The price of durian, a substitute, rises sharply.',c:'D',d:'R',f:'PupQup',why:'Some buyers switch from durian to mangoes, so demand for mangoes increases at every price.'},
+  {k:'ppc',m:'Country: an island economy',e:'An earthquake destroys factories, ports and roads.',c:'in',why:'Capital is destroyed, so the economy can produce less of both goods: the PPC shifts inwards.'},
+  {k:'sd',m:'Market: energy drinks',e:'A health report shows that energy drinks damage teenagers’ health.',c:'D',d:'L',f:'PdnQdn',why:'Tastes change against the product, so demand decreases at every price.'},
+  {k:'ppc',m:'Country: Thailand',e:'A recession closes factories and workers become unemployed.',c:'inside',why:'The resources still exist but are not used, so the economy moves to a point inside its PPC. The PPC itself does not move.'},
+];
+const EFF={PupQup:'Price rises, quantity rises',PdnQup:'Price falls, quantity rises',PupQdn:'Price rises, quantity falls',PdnQdn:'Price falls, quantity falls'};
+let shI=0,shS=0,shOrder=EV.slice();
+function drawSD(curve,dir){const W=420,H=360,base=H-50,X=v=>90+v*29,Y=v=>base-v*29;
+  const ln=(x1,y1,x2,y2,c)=>`<line x1="${X(x1)}" y1="${Y(y1)}" x2="${X(x2)}" y2="${Y(y2)}" stroke="${c}" stroke-width="3.5"/>`;
+  const T=(x,y,t,c=NAVY,a='start',s=15)=>`<text x="${x}" y="${y}" text-anchor="${a}" font-size="${s}" font-weight="900" fill="${c}" font-family="Lato,sans-serif">${t}</text>`;
+  const dash=(x,y)=>`<line x1="${x}" y1="${y}" x2="${x}" y2="${base}" stroke="${GREY}" stroke-dasharray="5 4"/><line x1="70" y1="${y}" x2="${x}" y2="${y}" stroke="${GREY}" stroke-dasharray="5 4"/>`;
+  const dot=(x,y,c)=>`<circle cx="${x}" cy="${y}" r="6" fill="${c}" stroke="#fff" stroke-width="2"/>`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Demand and supply diagram"><defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="${NAVY}"/></marker><marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="${ORANGE}"/></marker></defs>`;
+  s+=`<line x1="70" y1="${base}" x2="${W-20}" y2="${base}" stroke="${NAVY}" stroke-width="3" marker-end="url(#ar)"/><line x1="70" y1="${base}" x2="70" y2="18" stroke="${NAVY}" stroke-width="3" marker-end="url(#ar)"/>`;
+  s+=T((70+W-20)/2,H-12,'Quantity',NAVY,'middle')+`<text transform="translate(26 ${(base+18)/2}) rotate(-90)" text-anchor="middle" font-size="15" font-weight="900" fill="${NAVY}" font-family="Lato,sans-serif">Price</text>`;
+  const e1=[4.5,5.5];let e2,extra='';
+  if(curve==='D'){const R=dir==='R';s+=ln(1,9,8,2,BLUE)+T(X(8)+5,Y(2)+5,'D1',BLUE)+ln(1,2,8,9,BLUE)+T(X(8)+5,Y(9)+5,'S',BLUE);
+    if(R){s+=ln(2.5,9.5,9.5,2.5,ORANGE)+T(X(9.5)+3,Y(2.5)+15,'D2',ORANGE);e2=[5.5,6.5];extra=`<line x1="${X(5)}" y1="${Y(2.8)}" x2="${X(6.3)}" y2="${Y(2.8)}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao)"/>`;}
+    else{s+=ln(0,7.5,6,1.5,ORANGE)+T(X(6)-4,Y(1.5)+16,'D2',ORANGE,'end');e2=[3.25,4.25];extra=`<line x1="${X(6.3)}" y1="${Y(1.3)}" x2="${X(5)}" y2="${Y(1.3)}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao)"/>`;}}
+  else{const R=dir==='R';s+=ln(1,9,8,2,BLUE)+T(X(8)+5,Y(2)+5,'D',BLUE)+ln(1,2,8,9,BLUE)+T(X(8)+5,Y(9)+5,'S1',BLUE);
+    if(R){s+=ln(3,2,10,9,ORANGE)+T(X(10)+4,Y(9)+18,'S2',ORANGE);e2=[5.5,4.5];extra=`<line x1="${X(5.2)}" y1="${Y(2.2)}" x2="${X(6.6)}" y2="${Y(2.2)}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao)"/>`;}
+    else{s+=ln(0,3,6,9,ORANGE)+T(X(6)-8,Y(9)-4,'S2',ORANGE,'end');e2=[3.5,6.5];extra=`<line x1="${X(4.8)}" y1="${Y(8.2)}" x2="${X(3.4)}" y2="${Y(8.2)}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao)"/>`;}}
+  s+=dash(X(e1[0]),Y(e1[1]))+dash(X(e2[0]),Y(e2[1]))+dot(X(e1[0]),Y(e1[1]),NAVY)+dot(X(e2[0]),Y(e2[1]),ORANGE)+extra;
+  s+=T(62,Y(e1[1])+5,'P1',NAVY,'end',13)+T(62,Y(e2[1])+5,'P2',ORANGE,'end',13)+T(X(e1[0]),base+19,'Q1',NAVY,'middle',13)+T(X(e2[0]),base+19,'Q2',ORANGE,'middle',13);
+  return s+'</svg>';}
+function drawPPC(kind){const W=420,H=340,base=H-50,X=v=>70+v*3.2,Y=v=>base-v*2.7;
+  const arc=r=>{const p=[];for(let k=0;k<=40;k++){const a=k/40*Math.PI/2;p.push(X(r*Math.sin(a))+','+Y(r*Math.cos(a)));}return p.join(' ');};
+  const T=(x,y,t,c=NAVY,a='start')=>`<text x="${x}" y="${y}" text-anchor="${a}" font-size="14" font-weight="900" fill="${c}" font-family="Lato,sans-serif">${t}</text>`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="PPC diagram"><defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="${NAVY}"/></marker><marker id="ao2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="${ORANGE}"/></marker></defs>`;
+  s+=`<line x1="70" y1="${base}" x2="${W-20}" y2="${base}" stroke="${NAVY}" stroke-width="3" marker-end="url(#ar2)"/><line x1="70" y1="${base}" x2="70" y2="18" stroke="${NAVY}" stroke-width="3" marker-end="url(#ar2)"/>`;
+  s+=T((70+W-20)/2,H-12,'Consumer goods',NAVY,'middle')+`<text transform="translate(26 ${(base+18)/2}) rotate(-90)" text-anchor="middle" font-size="14" font-weight="900" fill="${NAVY}" font-family="Lato,sans-serif">Capital goods</text>`;
+  const r1=kind==='in'?92:72,r2=kind==='out'?92:kind==='in'?70:72,a=Math.PI/4;
+  s+=`<polyline points="${arc(r1)}" fill="none" stroke="${BLUE}" stroke-width="3.5"/>`+T(X(r1)-6,Y(6),'PPC1',BLUE,'end');
+  if(kind==='inside'){const on=[72*Math.sin(a),72*Math.cos(a)],ins=[on[0]*.6,on[1]*.6];
+    s+=`<line x1="${X(on[0]*.95)}" y1="${Y(on[1]*.95)}" x2="${X(ins[0]*1.08)}" y2="${Y(ins[1]*1.08)}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao2)"/><circle cx="${X(on[0])}" cy="${Y(on[1])}" r="6" fill="${NAVY}" stroke="#fff" stroke-width="2"/><circle cx="${X(ins[0])}" cy="${Y(ins[1])}" r="6" fill="${ORANGE}" stroke="#fff" stroke-width="2"/>`+T(X(on[0])+10,Y(on[1])-6,'A')+T(X(ins[0])-10,Y(ins[1])+5,'B',ORANGE,'end');}
+  else{s+=`<polyline points="${arc(r2)}" fill="none" stroke="${ORANGE}" stroke-width="3.5"/>`+T(X(r2)-6,Y(6),'PPC2',ORANGE,'end');
+    const f=kind==='out'?[74,89]:[89,74];s+=`<line x1="${X(f[0]*Math.sin(a))}" y1="${Y(f[0]*Math.cos(a))}" x2="${X(f[1]*Math.sin(a))}" y2="${Y(f[1]*Math.cos(a))}" stroke="${ORANGE}" stroke-width="3" marker-end="url(#ao2)"/>`;}
+  return s+'</svg>';}
+function drawShift(){const c=$('shCard');
+  if(shI>=shOrder.length){c.innerHTML=`<h3>All ten events done: ${shS} / ${shOrder.length} right first time</h3><p>Now write one in full: <b>Explain how a fall in the cost of raw materials affects the market for a product. [4]</b> Use the four links: which curve shifts and which way → excess demand or supply at the old price → what happens to price → what happens to quantity.</p><button class="btn alt" id="shAgain">Start again</button>`;
+    $('shAgain').onclick=()=>{shI=0;shS=0;shOrder=shuffle(EV.slice());rebuildShift();};complete(3,`Shifts ${shS}/${shOrder.length}`);return;}
+  const ev=shOrder[shI];let first=true,stage=1,chosen={};
+  $('shNum').textContent=`Event ${shI+1} of ${shOrder.length}`;$('shScore').textContent=`Right first time: ${shS}`;$('shMkt').textContent=ev.m;$('shEvent').textContent=ev.e;$('shFb').innerHTML='';$('shChart').classList.add('hide');$('shNext').classList.add('hide');
+  const steps=$('shSteps');steps.innerHTML='';
+  function ask(title,opts,correct,onOk,hint){const box=document.createElement('div');box.className='step';box.innerHTML=`<b>${title}</b><div class="opts"></div>`;steps.appendChild(box);
+    opts.forEach(([v,l])=>{const b=document.createElement('button');b.className='opt';b.textContent=l;b.onclick=()=>{
+      if(v===correct){box.querySelectorAll('.opt').forEach(x=>x.disabled=true);b.classList.add('ok');onOk();}
+      else{if(first)miss();first=false;b.classList.add('no');b.disabled=true;$('shFb').innerHTML=`<div class="fb no">Not quite. ${hint}</div>`;}};box.querySelector('.opts').appendChild(b);});}
+  function finish(){$('shFb').innerHTML=`<div class="fb ok"><b>${first?'Right first time.':'Got there.'}</b> ${esc(ev.why)}</div>`;if(first){shS++;award(3,2,'Shift event');}else award(3,1,'Shift event (second try)');$('shScore').textContent=`Right first time: ${shS}`;
+    if(ev.k==='sd'&&ev.c!=='N'){$('shChart').innerHTML=drawSD(ev.c,ev.d);$('shChart').classList.remove('hide');}
+    if(ev.k==='ppc'){$('shChart').innerHTML=drawPPC(ev.c);$('shChart').classList.remove('hide');}
+    $('shNext').textContent=shI<shOrder.length-1?'Next event':'See summary';$('shNext').classList.remove('hide');}
+  if(ev.k==='ppc'){ask('What happens on the PPC diagram?',[['out','The PPC shifts outwards'],['in','The PPC shifts inwards'],['inside','The economy moves to a point inside the PPC']],ev.c,finish,'Ask: does the quantity or quality of resources change, or are existing resources just not being used?');}
+  else{ask('Step 1: what moves?',[['D','The demand curve shifts'],['S','The supply curve shifts'],['N','No shift: a movement along the curves']],ev.c,()=>{$('shFb').innerHTML='';
+      if(ev.c==='N'){finish();return;}
+      ask('Step 2: which way?',[['L','Left (a decrease)'],['R','Right (an increase)']],ev.d,()=>{$('shFb').innerHTML='';
+        ask('Step 3: what happens at the new equilibrium?',Object.entries(EFF),ev.f,finish,'Picture the new curve: where does it cross the other curve, higher or lower, to the left or right?');},'Does the event make buyers want more or less, or firms supply more or less, at every price?');},'Does the event change what buyers want or can afford (demand), or firms’ costs (supply)? Or is it the product’s own price?');}
+}
+function rebuildShift(){$('shCard').innerHTML=`<div class="flex" style="justify-content:space-between"><span class="pill" id="shNum"></span><span class="score" id="shScore"></span></div><p class="muted" id="shMkt" style="margin:8px 0 0"></p><p class="qtext" id="shEvent"></p><div id="shSteps"></div><div id="shFb"></div><div class="chartbox hide" id="shChart" style="margin-top:10px"></div><button class="btn hide" id="shNext" style="margin-top:12px">Next event</button>`;$('shNext').onclick=()=>{shI++;drawShift();};drawShift();}
+rebuildShift();
+
+/* ================= TAB 5: SECTION A ================= */
+const DD=[
+  {t:'Subsidy',o:[['A payment by the government to producers that lowers their costs and encourages production.',1,'Two precise ideas: who pays whom, and what it does.'],['Money from the government.',0,'Too vague: money to whom, and for what? Benefits and pensions are also money from the government.'],['When the government helps firms, for example electric car makers in Thailand.',0,'An example is not a definition, and “helps” is not precise.']]},
+  {t:'Public good',o:[['A product that is non-excludable and non-rival, so a free market will not provide it.',1,'Both key words, plus why the market fails to provide it.'],['A good provided by the government, such as a school.',0,'Many goods provided by the state are not public goods. Education is a merit good.'],['A good that is free to use.',0,'Free goods and public goods are different ideas.']]},
+  {t:'Recession',o:[['A fall in real GDP for two quarters in a row.',1,'Precise: what falls (real GDP) and for how long.'],['When the economy is bad.',0,'“Bad” is not an economic term: what falls, and for how long?'],['When unemployment is high.',0,'High unemployment is a likely result of a recession, not its definition.']]},
+  {t:'Internal economies of scale',o:[['Falls in a firm’s average cost that come from the firm itself growing larger.',1,'Two ideas: lower average cost, caused by the firm’s own growth.'],['When a firm gets bigger.',0,'That is growth, not an economy of scale. What happens to costs?'],['Lower costs.',0,'Which costs? Total costs usually rise as a firm grows; it is average cost that falls.']]},
+  {t:'Price elasticity of supply',o:[['How much the quantity supplied responds to a change in the product’s price.',1,'Quantity supplied, responding to a change in price: both ideas.'],['How much supply changes.',0,'Changes because of what? The definition must mention price.'],['When supply is elastic.',0,'You cannot use the word you are defining.']]},
+  {t:'Scarcity',o:[['Not having enough resources to satisfy everyone’s wants, because wants are unlimited and resources are limited.',1,'Both sides of the problem: limited resources and unlimited wants.'],['When something is rare.',0,'Too general: economists mean resources compared with wants.'],['When people are poor.',0,'Scarcity affects rich people and rich countries too.']]},
+];
+let ddI=0,ddS=0,ddO=[];
+function startDD(){ddO=DD.map(x=>({t:x.t,o:shuffle(x.o.slice())}));ddI=0;ddS=0;drawDD();}
+function drawDD(){const c=$('ddCard');
+  if(ddI>=ddO.length){c.innerHTML=`<h3>1. Definition doctor: ${ddS} / ${ddO.length}</h3><p>The pattern: a 2-mark definition names <b>what it is</b> and adds <b>one precise detail</b> (cause, effect or condition). Examples on their own and repeating the word earn nothing.</p><button class="btn alt" id="ddAgain">Try again</button>`;$('ddAgain').onclick=startDD;taState.dd=true;checkTab5();return;}
+  const x=ddO[ddI];
+  c.innerHTML=`<div class="flex" style="justify-content:space-between"><h3 style="margin:0">1. Definition doctor · ${ddI+1} of ${ddO.length}</h3><span class="score">Score: ${ddS}</span></div><p class="qtext">Which answer scores 2 / 2 for “Define ${esc(x.t.toLowerCase())}”?</p><div class="opts col" id="ddO"></div><div id="ddF"></div>`;
+  x.o.forEach(([t,ok,why])=>{const b=document.createElement('button');b.className='opt plain';b.textContent=t;b.onclick=()=>{
+    $('ddO').querySelectorAll('.opt').forEach(z=>z.disabled=true);if(ok){ddS++;award(4,1,'Definition');}else miss();b.classList.add(ok?'ok':'no');
+    $('ddF').innerHTML=`<div class="fb ${ok?'ok':'no'}">${x.o.map(([tt,kk,ww])=>`<div style="margin:4px 0">${kk?'✓':'✗'} <i>${esc(tt)}</i><br>${esc(ww)}</div>`).join('')}</div><button class="btn" style="margin-top:10px" id="ddN">${ddI<ddO.length-1?'Next':'See score'}</button>`;$('ddN').onclick=()=>{ddI++;drawDD();};};$('ddO').appendChild(b);});
+}
+const taState={dd:false,ta:false};
+function checkTab5(){if(taState.dd&&taState.ta)complete(4,'Section A skills');}
+startDD();
+
+// table analyst
+(function(){const W=420,H=300,L=56,R=16,T=16,B=50,X=v=>L+(v-1.5)/(6.5-1.5)*(W-L-R),Y=v=>H-B-(v-0)/(6-0)*(H-T-B);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter graph of education spending and growth">`;
+  for(let v=0;v<=6;v+=1)s+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v?'#EEF2F7':NAVY}" stroke-width="${v?1:2}"/><text x="${L-8}" y="${Y(v)+4}" text-anchor="end" font-size="12" fill="${GREY}">${v}</text>`;
+  for(let v=2;v<=6;v+=1)s+=`<text x="${X(v)}" y="${H-B+18}" text-anchor="middle" font-size="12" fill="${GREY}">${v}</text>`;
+  s+=`<line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="${NAVY}" stroke-width="2"/>`;
+  [['A',2,1.5],['B',3,2.5],['C',4,3.8],['D',5,1.2],['E',6,5]].forEach(([n,x,y])=>{s+=`<circle cx="${X(x)}" cy="${Y(y)}" r="7" fill="${n==='D'?ORANGE:NAVY}"/><text x="${X(x)+10}" y="${Y(y)-8}" font-size="13" font-weight="900" fill="${n==='D'?ORANGE:NAVY}">${n}</text>`;});
+  s+=`<text x="${(L+W-R)/2}" y="${H-10}" text-anchor="middle" font-size="13" font-weight="700" fill="${NAVY}">Spending on education (% of GDP)</text><text transform="translate(14 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" font-size="13" font-weight="700" fill="${NAVY}">Real GDP growth (%)</text></svg>`;
+  $('taChart').innerHTML=s;})();
+const TA=[
+  ['As spending on education rises, the growth rate tends to rise.',1,'S · State the relationship'],
+  ['Country E has the highest growth rate.',0,'A description of one country, not a relationship'],
+  ['Country A spent 2.0% of GDP on education and grew by 1.5%, while Country E spent 6.0% and grew by 5.0%.',1,'P · Prove it with figures from two countries'],
+  ['Education spending causes growth in every country.',0,'Too strong: Country D shows it does not hold everywhere, and the table cannot prove cause'],
+  ['Country D does not fit the pattern: it spent 5.0% of GDP on education but grew by only 1.2%.',1,'E · Exception, with its figures'],
+  ['Countries should spend more on education.',0,'A recommendation, not analysis of the data'],
+  ['Education takes years to raise productivity, and other factors such as exports also affect growth, so the data do not prove that education causes growth.',1,'C · Caveat: other factors and cause'],
+  ['There are only five countries, so the pattern may not apply to other countries.',1,'C · Caveat: small sample'],
+];
+let taOrder=shuffle(TA.slice());
+function drawTA(){$('taList').innerHTML=taOrder.map((x,i)=>`<label class="stmt" id="ta${i}"><input type="checkbox"><span>${esc(x[0])}<span class="tag hide"></span></span></label>`).join('');$('taFb').innerHTML='';$('taCheck').classList.remove('hide');$('taAgain').classList.add('hide');}
+$('taCheck').onclick=()=>{let right=0;taOrder.forEach((x,i)=>{const el=$('ta'+i),on=el.querySelector('input').checked,ok=on===!!x[1];if(ok)right++;el.classList.add(ok?'ok':'no');el.querySelector('input').disabled=true;const tg=el.querySelector('.tag');tg.textContent=(x[1]?'✓ Earns a mark · ':'✗ No mark · ')+x[2];tg.classList.remove('hide');});
+  $('taFb').innerHTML=`<div class="fb ${right===TA.length?'ok':'info'}"><b>${right} of ${TA.length} decisions correct.</b> A full-mark answer uses each of S, P, E and C at least once. Put the marked sentences together and you have a 5-mark answer.</div>`;
+  $('taCheck').classList.add('hide');$('taAgain').classList.remove('hide');award(4,Math.max(.5,right/2),'Table analyst');taState.ta=true;checkTab5();};
+$('taAgain').onclick=()=>{taOrder=shuffle(TA.slice());drawTA();};
+drawTA();
+
+/* ================= TAB 6: SECTION B ================= */
+/* Each task: s = correct sentences in order [label, text]; x = [sentence that does not belong, why]. */
+const A='analyse',D='discuss';
+const SCEN=[
+ {name:'Starter',full:'Starter',stem:'',tasks:[
+  {type:A,q:'Analyse how division of labour can reduce a firm’s average costs. [6]',s:[
+    ['Define','Division of labour is splitting production into separate tasks, with each worker doing one task.'],
+    ['Define','For example, in a Thai garment factory one worker cuts cloth, another sews sleeves and another checks quality.'],
+    ['Chain 1','One effect is that each worker repeats one task many times, so they become faster and more skilled.'],
+    ['Chain 1','This leads to higher productivity: the same number of workers make more shirts each hour.'],
+    ['Chain 2','Another effect is that workers need less training for one simple task, so the firm’s training costs fall.'],
+    ['Overall','Overall, the firm produces more output for a similar total cost, so its average cost per shirt falls.']],
+   x:['Division of labour means each worker learns many different jobs, so they never get bored.','Wrong definition: division of labour means each worker does one task. Boredom is a disadvantage of division of labour, not an advantage.']},
+  {type:D,q:'Discuss whether or not a government should set a maximum price for rice. [8]',s:[
+    ['Why it might','A maximum price set below the equilibrium price makes rice cheaper, so poor households can afford enough of a basic food.'],
+    ['Why it might','This means they have more income left for other necessities, which reduces poverty.'],
+    ['Why not','However, at the lower price farmers supply less rice while consumers demand more, so there is a shortage.'],
+    ['Why not','This shortage may lead to queues and a black market where rice is sold above the maximum price.'],
+    ['Why not','Farmers’ incomes also fall, so some may stop growing rice, which reduces supply further in the long run.'],
+    ['Judgement','Overall, a maximum price helps poor households only if the shortage is small, for example if the government also subsidises farmers; it depends on how far below equilibrium the price is set.']],
+   x:['A maximum price is set above the equilibrium price so that farmers earn more.','Wrong: a maximum price only has an effect if it is set below equilibrium. A price floor that helps farmers is a minimum price.']}]},
+
+ {name:'1 Wages',full:'Scenario 1: Wages and trade unions',
+  stem:'In 2025 Thailand raised the minimum wage to 400 baht a day in some provinces and for some types of business. Only a small share of Thai workers belong to a trade union, so most workers agree their pay with their employer on their own.',
+  tasks:[
+  {type:A,q:'Analyse why a trade union may find it difficult to increase its members’ wages. [6]',s:[
+    ['Define','A trade union is an organisation of workers that bargains with employers for better pay and working conditions.'],
+    ['Chain 1','One reason is that the union may have few members, for example when only a small share of workers in an industry join.'],
+    ['Chain 1','This means it has little bargaining power, because the employer can keep production going if the members go on strike.'],
+    ['Chain 2','Another reason is that the firm may be making low profits or facing strong competition from firms abroad.'],
+    ['Chain 2','If the firm raises wages its costs rise, so it may threaten to cut jobs, and the union may accept a smaller rise to protect jobs.'],
+    ['Overall','Overall, a union finds it hardest to raise wages when it has few members and the employer cannot afford higher wages.']],
+   x:['Trade unions can also organise strikes and protests.','A bare point: it does not explain why raising wages is difficult, and it has no “so…” to develop it.']},
+  {type:D,q:'Discuss whether or not a government should raise the national minimum wage. [8]',s:[
+    ['Why it might','A higher minimum wage raises the income of the lowest-paid workers, so they can afford more food, housing and education for their children.'],
+    ['Why it might','These workers spend most of any extra income, so total demand rises and firms may sell more.'],
+    ['Why not','However, if the minimum wage is set well above the equilibrium wage, firms’ labour costs rise, so they demand fewer workers and unemployment may rise.'],
+    ['Why not','Firms may also pass the higher costs on to consumers as higher prices, which reduces the real value of the wage rise.'],
+    ['Judgement','Overall, a government should raise the minimum wage if the new wage is only a little above the equilibrium wage, because the gain in income is then larger than the loss of jobs.'],
+    ['Judgement','It depends on whether firms can afford it: large hotels in Phuket may pay 400 baht easily, but small family firms in poorer provinces may cut jobs.']],
+   x:['Overall, the minimum wage has good and bad points, so the government should think carefully.','A weak judgement: it does not decide anything or say what the answer depends on.']}]},
+
+ {name:'2 Sugar tax',full:'Scenario 2: Taxing sugary drinks',
+  stem:'Thailand taxes sugary drinks: the more sugar a drink contains, the higher the tax. Health officials worry that people consume too much sugar, which causes diabetes and other illnesses and raises the cost of healthcare.',
+  tasks:[
+  {type:A,q:'Analyse how a tax on sugary drinks can affect the market for sugary drinks. [6]',s:[
+    ['Define','An indirect tax is a tax on spending on goods and services, which is paid to the government by the seller.'],
+    ['Chain 1','The tax raises the cost of supplying each bottle, so the supply curve shifts to the left.'],
+    ['Chain 1','This leads to a higher equilibrium price and a lower equilibrium quantity of sugary drinks.'],
+    ['Chain 2','How much the quantity falls depends on PED: if many drinkers switch to substitutes such as water, demand is price elastic and consumption falls a lot.'],
+    ['Chain 3','Firms may also reduce the sugar in their drinks to pay a lower rate of tax, so consumers take in less sugar even if they buy the same number of drinks.'],
+    ['Overall','Overall, the tax raises the price and reduces the quantity of sugary drinks, and the fall is larger when demand is price elastic.']],
+   x:['The tax will make everyone stop drinking sugary drinks.','Too strong: the quantity falls, but people whose demand is price inelastic keep buying.']},
+  {type:D,q:'Discuss whether or not a government should use education campaigns, rather than taxes, to reduce the consumption of sugary drinks. [8]',s:[
+    ['Why it might','Education campaigns, such as school lessons and adverts about diabetes, give consumers information about the harm sugar causes.'],
+    ['Why it might','This corrects the information failure, so people choose to drink less without paying higher prices, which does not hurt poor households.'],
+    ['Why not','However, campaigns cost the government money and take a long time to change habits, and some people ignore the message.'],
+    ['Why not','A tax works more quickly because it raises the price, and it raises revenue that can be spent on healthcare.'],
+    ['Judgement','Overall, the best policy is probably to use both: the tax reduces consumption now, while education changes habits in the long run.'],
+    ['Judgement','It depends on PED: if demand is very price inelastic, a tax will not reduce consumption much, so education becomes more important.']],
+   x:['Sugary drinks are a merit good because people enjoy them.','Wrong concept: sugary drinks are a demerit good, because they harm consumers more than people realise.']}]},
+
+ {name:'3 Banks',full:'Scenario 3: Banks and interest rates',
+  stem:'Thai households and firms save with, borrow from and make payments through commercial banks. Between late 2024 and the end of 2025 the Bank of Thailand cut its interest rate from 2.50% to 1.25%, because economic growth was slow.',
+  tasks:[
+  {type:A,q:'Analyse how commercial banks can help firms to grow. [6]',s:[
+    ['Define','A commercial bank is a profit-making bank that accepts deposits from, and lends to, households and firms.'],
+    ['Chain 1','One way is that banks lend money to firms, for example a loan to a Thai food company to build a new factory.'],
+    ['Chain 1','This allows the firm to buy more capital goods, so it can increase its output and sell to more customers.'],
+    ['Chain 2','Another way is that banks provide quick and safe ways to make payments, such as bank transfers and QR-code payments.'],
+    ['Chain 2','This means firms can pay suppliers and receive money from customers easily, so they can trade with more people, including firms abroad.'],
+    ['Overall','Overall, by providing loans and payment services, commercial banks help firms to increase production and grow larger.']],
+   x:['Commercial banks also issue banknotes and set the interest rate.','Wrong: these are functions of the central bank, not commercial banks.']},
+  {type:D,q:'Discuss whether or not a central bank should cut interest rates to increase economic growth. [8]',s:[
+    ['Why it might','A lower interest rate makes borrowing cheaper, so firms borrow more to invest in machinery and households borrow more to buy cars and houses.'],
+    ['Why it might','This increases total demand, so firms produce more output, real GDP rises and unemployment may fall.'],
+    ['Why not','However, if households already have high debts or are worried about their jobs, they may not borrow more, so spending rises only a little.'],
+    ['Why not','Lower interest rates also reward savers less, and if the economy is close to full capacity, the extra demand may cause inflation instead of growth.'],
+    ['Judgement','Overall, a cut is most likely to increase growth when the economy has spare capacity and firms and households are confident.'],
+    ['Judgement','It depends on confidence and debt: Thailand cut its rate from 2.50% to 1.25% but grew by only 2.4% in 2025, so a cut may need support from fiscal policy.']],
+   x:['Cutting interest rates is a type of fiscal policy.','Wrong: changing interest rates is monetary policy. Fiscal policy uses government spending and taxation.']}]},
+
+ {name:'4 Firm size',full:'Scenario 4: Big and small firms',
+  stem:'Thailand has thousands of small, independent coffee shops. It also has large coffee chains with hundreds of branches, which buy coffee beans and cups in bulk and advertise across the country.',
+  tasks:[
+  {type:A,q:'Analyse why a firm’s average costs may rise as it grows. [6]',s:[
+    ['Define','Diseconomies of scale are increases in average cost that happen when a firm grows too large.'],
+    ['Chain 1','One reason is that communication becomes difficult, because messages must pass through many managers before they reach staff in hundreds of branches.'],
+    ['Chain 1','This leads to slow decisions and mistakes, such as ordering the wrong amount of stock, which wastes resources and raises costs.'],
+    ['Chain 2','Another reason is that workers in a very large firm may feel unimportant, so they become less motivated.'],
+    ['Chain 2','Their productivity falls, so the firm pays the same wages for less output and its average cost rises.'],
+    ['Overall','Overall, average costs rise when the problems of managing a large firm outweigh the benefits of buying and producing in bulk.']],
+   x:['A large chain can buy coffee beans in bulk at a lower price per kilo.','Off the question: this is an economy of scale, which lowers average cost. The question asks why average cost rises.']},
+  {type:D,q:'Discuss whether or not small firms can survive when they compete with large firms. [8]',s:[
+    ['Why they can','Small firms can offer a personal service, such as an owner who knows each customer’s favourite drink, which large chains find hard to copy.'],
+    ['Why they can','They can also serve small markets, such as speciality coffee from northern Thai farms, where demand is too small for a large chain to bother.'],
+    ['Why they may not','However, large chains gain economies of scale such as bulk buying, so their average costs are lower and they can charge lower prices.'],
+    ['Why they may not','Small firms also find it harder to borrow from banks, so they cannot easily invest to grow or survive a period of low sales.'],
+    ['Judgement','Overall, small firms can survive if they compete on quality and service rather than on price.'],
+    ['Judgement','It depends on the market: where customers mainly want a low price and the same product everywhere, small firms are less likely to survive.']],
+   x:['Small firms always fail because they are small.','No reasoning and too strong: many small firms survive, and the sentence gives no “because… so…”.']}]},
+
+ {name:'5 Healthcare',full:'Scenario 5: Healthcare',
+  stem:'Thailand’s Universal Coverage Scheme, often called the “30-baht scheme”, gives most Thai citizens treatment in public hospitals at little or no cost. As incomes rise, more families in Bangkok also pay for treatment in private hospitals.',
+  tasks:[
+  {type:A,q:'Analyse how a rise in household incomes can affect the market for private hospital treatment. [6]',s:[
+    ['Define','A normal good is a product whose demand rises when incomes rise, and private hospital treatment is an example.'],
+    ['Chain 1','As household incomes rise, more people can afford private treatment, so the demand curve for it shifts to the right.'],
+    ['Chain 1','At the original price there is now excess demand, so the price rises until a new, higher equilibrium price and quantity are reached.'],
+    ['Chain 2','The higher price and profits act as a signal to private hospitals to supply more.'],
+    ['Chain 2','In the long run hospitals open new branches and hire more doctors, so supply shifts to the right and the rise in price becomes smaller.'],
+    ['Overall','Overall, higher incomes mean that more private treatment is bought, at a higher price, and more resources move into private healthcare.']],
+   x:['A rise in incomes causes a movement along the demand curve.','Wrong: only a change in the product’s own price causes a movement along the curve. A change in income shifts the curve.']},
+  {type:D,q:'Discuss whether or not a government should provide healthcare free of charge. [8]',s:[
+    ['Why it might','Healthcare is a merit good: people tend to under-consume it because they do not realise its full benefits, such as early check-ups.'],
+    ['Why it might','If it is free, poor households can afford treatment, so people become healthier and more productive, and there are external benefits such as fewer infections.'],
+    ['Why not','However, free healthcare has an opportunity cost: the money could be spent on education or roads, or it must be paid for with higher taxes.'],
+    ['Why not','When the price is zero, demand is very high, so there may be long queues and doctors may have less time for each patient.'],
+    ['Judgement','Overall, free basic healthcare is usually worth providing because of its large external benefits.'],
+    ['Judgement','It depends on whether the government can raise enough tax revenue to employ enough doctors; if not, a small charge, like Thailand’s 30 baht, may shorten queues.']],
+   x:['Healthcare is a public good because everyone uses it.','Wrong concept: healthcare is a merit good. It is excludable and rival, so it is not a public good.']}]},
+];
+const STARTERS=/^(One reason is|Another reason is|One way is|Another way is|One effect is|Another effect is|This leads to|This means|This allows|However,|Overall,|It depends on|For example,|In the long run)/;
+function hlS(t){let h=esc(t);const m=t.match(STARTERS);if(m)h=`<span class="hl">${esc(m[0])}</span>`+esc(t.slice(m[0].length));return h.replace(/(it depends on)/,'<span class="hl">$1</span>');}
+function modelOf(t){const paras=[];t.s.forEach(([k,v],i)=>{if(i&&t.s[i-1][0]===k)paras[paras.length-1].push(v);else paras.push([v]);});
+  const html=paras.map((p,i)=>`<p${i===paras.length-1?' style="margin-bottom:0"':''}>${p.map(hlS).join(' ')}</p>`).join('');
+  if(t.type!==D)return html;const f=t.s[0][1];return html.replace(esc(f),'<span class="hl">On the one hand,</span> '+esc(f[0].toLowerCase()+f.slice(1)));}
+const bDone={};let sI=0,tI=0,placed=[],chipOrder=[];
+const TOTAL=SCEN.reduce((n,s)=>n+s.tasks.length,0);
+const key=()=>sI+'-'+tI,partName=t=>t.type===A?'(c) Analyse [6]':'(d) Discuss [8]';
+SCEN.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.name;b.onclick=()=>{sI=i;tI=0;drawScen();resetB();};$('bScen').appendChild(b);});
+function drawScen(){[...$('bScen').children].forEach((x,j)=>{x.classList.toggle('on',j===sI);const sc=SCEN[j];x.textContent=sc.name+(sc.tasks.every((_,k)=>bDone[j+'-'+k])?' ✓':'');});
+  const sc=SCEN[sI];$('bStem').innerHTML=sc.stem?`<div class="stem"><b>${esc(sc.full)}</b><p style="margin:6px 0 0">${esc(sc.stem)}</p></div>`:'<p class="muted" style="margin:0 0 10px">Two short answers to learn the method. Then try Scenarios 1–5: each is set out like a Section B question.</p>';
+  $('bTasks').innerHTML='';sc.tasks.forEach((t,j)=>{const b=document.createElement('button');b.textContent=partName(t)+(bDone[sI+'-'+j]?' ✓':'')+(written[sI+'-'+j]?' ✍':'');b.classList.toggle('on',j===tI);b.onclick=()=>{tI=j;drawScen();resetB();};$('bTasks').appendChild(b);});
+  const n=Object.keys(bDone).length;$('bCount').textContent=`${n} of ${TOTAL} built · ${Object.keys(written).length} written on paper`;}
+function resetB(){placed=[];const t=SCEN[sI].tasks[tI];chipOrder=shuffle([...t.s.map((_,i)=>i),-1]);drawB();}
+function chipText(t,k){return k<0?t.x[0]:t.s[k][1];}
+function drawB(){const t=SCEN[sI].tasks[tI],c=$('bCard'),N=t.s.length;
+  c.innerHTML=`<p class="qtext">${esc(t.q)}</p><p class="muted" style="margin:0 0 8px">${N} sentences build the answer. <b>One sentence does not belong</b>: leave it out.</p><div class="grid2"><div id="bSlots"></div><div id="bChips"></div></div><div class="flex"><button class="btn" id="bCheck">Check my answer</button><button class="btn alt" id="bReset">Start again</button></div><div id="bFb"></div><div id="bModel" class="hide" style="margin-top:12px"></div>`;
+  $('bSlots').innerHTML=t.s.map((x,i)=>`<div class="slot ${placed[i]!==undefined?'filled':''}" data-i="${i}"><span class="k">${esc(x[0])}</span><span>${placed[i]!==undefined?esc(chipText(t,placed[i])):'<span class="muted">Tap a sentence to place it here</span>'}</span></div>`).join('');
+  $('bSlots').querySelectorAll('.slot').forEach(s=>s.onclick=()=>{const i=+s.dataset.i;if(placed[i]!==undefined){placed[i]=undefined;drawB();}});
+  chipOrder.forEach(k=>{const used=placed.includes(k),b=document.createElement('button');b.className='chip'+(used?' used':'');b.textContent=chipText(t,k);b.disabled=used;
+    b.onclick=()=>{const e=t.s.findIndex((_,i)=>placed[i]===undefined);if(e<0)return;placed[e]=k;drawB();};$('bChips').appendChild(b);});
+  $('bReset').onclick=resetB;
+  if(bDone[key()]&&!placed.some(x=>x!==undefined)){$('bFb').innerHTML='<div class="fb ok">You have built this answer ✓. Build it again for practice, or go straight to the model and paper question below.</div>';showDone(t);}
+  $('bCheck').onclick=()=>{if(placed.filter(x=>x!==undefined).length<N){$('bFb').innerHTML=`<div class="fb no">Fill all ${N} slots first.</div>`;return;}
+    let ok=0;const slots=$('bSlots').querySelectorAll('.slot');placed.forEach((k,i)=>{const good=k===i;if(good)ok++;slots[i].classList.add(good?'ok':'no');});
+    const usedX=placed.includes(-1);
+    if(ok===N){const fresh=!bDone[key()];bDone[key()]=true;award(5,fresh?5:1,fresh?'Section B answer built':'Section B rebuild');
+      $('bFb').innerHTML=`<div class="fb ok"><b>Perfect.</b> The sentence you left out: “${esc(t.x[0])}” <br>${esc(t.x[1])}</div><div class="fb info"><b>Paper question unlocked.</b> Read the model answer (the highlighted words are the class sentence starters), then write the very similar question beside it in your revision pack.</div>`;
+      showDone(t);
+      if(fresh){track(`G10 MYE 6 Section B builder (answer built) ${SCEN[sI].full} ${partName(t)}`,'Answer built online');
+        const ks=Object.keys(bDone),hasA=ks.some(k=>{const[a,b]=k.split('-');return SCEN[a].tasks[b].type===A;}),hasD=ks.some(k=>{const[a,b]=k.split('-');return SCEN[a].tasks[b].type===D;});
+        if(hasA&&hasD)complete(5,'Section B builder');if(ks.length===TOTAL)track('G10 MYE 6 Section B builder (all answers built)',`All ${TOTAL} answers built`);}
+      drawScen();}
+    else{const tip=t.type===A?'define first, then each chain in order (point, then “This leads to… / This means…”), and finish with “Overall”.':'develop one side fully, then the other side, and end with a judgement that says what it depends on.';
+      miss();$('bFb').innerHTML=`<div class="fb no">${ok} of ${N} in the right place.${usedX?' <b>One of your sentences does not belong in this answer.</b>':''} Tap a red slot to send it back. Remember: ${tip}</div>`;}};
+}
+/* ---------- Paper twins: a very similar question to write on paper after a correct build ---------- */
+const TWIN={
+ '0-0':{q:'Analyse why division of labour may increase a firm’s average costs. [6]',pts:[
+   'Defined division of labour: splitting production into separate tasks, each worker doing one task',
+   'Repetition → boredom → lower motivation → lower productivity',
+   'Lower productivity → same wages for less output → higher average cost',
+   'If one worker is absent, the whole line stops → output lost while costs are still paid',
+   'Finished with an “Overall” sentence linking back to average cost']},
+ '0-1':{q:'Discuss whether or not a government should set a minimum price for rice. [8]',pts:[
+   'A minimum price is set above equilibrium → farmers’ incomes rise and become more stable',
+   'Higher, stable income → farmers keep growing rice / invest → food supply is secure',
+   'Other side: quantity supplied > quantity demanded → a surplus of rice',
+   'Government must buy and store the surplus → high cost and an opportunity cost (e.g. Thailand’s rice-pledging scheme); consumers pay more',
+   'Judgement that says what it depends on (e.g. how far above equilibrium; whether the government can afford the surplus)']},
+ '1-0':{q:'Analyse why a trade union may be able to increase its members’ wages. [6]',pts:[
+   'Defined a trade union: an organisation of workers that bargains for better pay and conditions',
+   'Many members → strong bargaining power → the threat of a strike is costly for the firm',
+   'Workers are skilled and hard to replace → the firm cannot easily use other workers',
+   'The firm is profitable or demand for its product is price inelastic → it can afford higher wages / pass on the cost',
+   'Finished with an “Overall” sentence: when wage rises are most likely']},
+ '1-1':{q:'Discuss whether or not a minimum wage reduces poverty. [8]',pts:[
+   'A minimum wage raises the income of the lowest-paid workers → they can afford more necessities',
+   'More spending by low-income households → higher total demand → more jobs',
+   'Other side: if set above equilibrium, firms demand fewer workers → unemployment, so some lose all income',
+   'It does not help the unemployed or workers outside the formal sector (e.g. many farm and street-food workers); prices may rise',
+   'Judgement that says what it depends on (e.g. the level compared with equilibrium; how many poor people are covered)']},
+ '2-0':{q:'Analyse how a subsidy to producers of low-sugar drinks can affect the market for low-sugar drinks. [6]',pts:[
+   'Defined a subsidy: a payment from the government to producers that lowers their costs',
+   'Lower costs → the supply curve shifts to the right',
+   'Equilibrium price falls and equilibrium quantity rises (ideally shown on a diagram)',
+   'The size of the rise in quantity depends on PED (elastic → large rise)',
+   'Finished with an “Overall” sentence linking back to the market']},
+ '2-1':{q:'Discuss whether or not a government should ban the sale of sugary drinks in schools. [8]',pts:[
+   'Sugary drinks are a demerit good; children under-estimate the harm (information failure)',
+   'A ban reduces consumption at school quickly → better health, lower healthcare costs later',
+   'Other side: students may buy drinks outside school or bring them from home, so total consumption may fall only a little',
+   'School shops lose revenue; a ban limits choice and does not change habits',
+   'Judgement that says what it depends on (e.g. enforcement; whether it is combined with education)']},
+ '3-0':{q:'Analyse how commercial banks can help households. [6]',pts:[
+   'Defined a commercial bank: a profit-making bank that accepts deposits from, and lends to, households and firms',
+   'Safe place to save → households earn interest → income for the future',
+   'Loans (e.g. for a house, car or education) → households can buy now and pay over time',
+   'Payment services (transfers, cards, QR codes) → quick and safe payments',
+   'Finished with an “Overall” sentence']},
+ '3-1':{q:'Discuss whether or not lower interest rates benefit households. [8]',pts:[
+   'Borrowers pay less interest → more disposable income → can spend more',
+   'Cheaper loans → easier to buy a house or car',
+   'Other side: savers earn less interest → lower income (e.g. retired people who live on savings)',
+   'Cheap borrowing may increase household debt and may cause inflation, which reduces real incomes',
+   'Judgement that says what it depends on (e.g. whether a household is mainly a borrower or a saver)']},
+ '4-0':{q:'Analyse why a firm’s average costs may fall as it grows. [6]',pts:[
+   'Defined economies of scale: falls in average cost as a firm grows larger',
+   'Bulk buying → lower price per unit of materials → lower average cost',
+   'Technical: larger, more efficient machinery → more output per worker',
+   'Financial or marketing: cheaper loans; advertising cost spread over more units',
+   'Finished with an “Overall” sentence linking back to average cost']},
+ '4-1':{q:'Discuss whether or not consumers benefit when a firm grows larger. [8]',pts:[
+   'Economies of scale → lower average costs → lower prices for consumers',
+   'Larger profits → more research and development → new and better products',
+   'Other side: diseconomies of scale → higher costs and poorer service',
+   'Fewer competitors → market power → higher prices and less choice',
+   'Judgement that says what it depends on (e.g. whether there is still competition in the market)']},
+ '5-0':{q:'Analyse how a rise in the cost of employing doctors can affect the market for private hospital treatment. [6]',pts:[
+   'Higher costs of production → the supply curve shifts to the left',
+   'Excess demand at the old price → equilibrium price rises and quantity falls (ideally shown on a diagram)',
+   'Size of the effect depends on PED: urgent treatment is price inelastic → price rises a lot, quantity falls a little',
+   'Some patients switch to public hospitals (a substitute) → demand for public treatment rises',
+   'Finished with an “Overall” sentence']},
+ '5-1':{q:'Discuss whether or not a government should provide free university education. [8]',pts:[
+   'Education is a merit good with external benefits → a more productive workforce and economic growth',
+   'Free places → students from poor families can attend → more equal opportunity',
+   'Other side: opportunity cost → money could be spent on schools or healthcare, or taxes must rise',
+   'Graduates earn higher wages, so they could pay; free places may also lead to crowded classes and lower quality',
+   'Judgement that says what it depends on (e.g. targeting help at poorer students through scholarships or loans)']},
+};
+const FRAME={analyse:[['Define','A … is …',2],['Chain 1','One reason / effect is … This leads to … This means …',4],['Chain 2','Another reason / effect is … so …',4],['Overall','Overall, …',2]],
+             discuss:[['One side','On the one hand, … so … This means …',5],['Other side','However, … so … This means …',5],['Judgement','Overall, … It depends on …',3]]};
+const written={};
+const GPAGE={};SCEN.forEach((sc,si)=>sc.tasks.forEach((_,ti)=>GPAGE[si+'-'+ti]=Object.keys(GPAGE).length+1));
+function twinHTML(k,t,print){const w=TWIN[k],sc=SCEN[+k.split('-')[0]];
+  const fr=FRAME[t.type].map(([lab,hint,n])=>`<div class="fr"><div class="frk"><b>${lab}</b><span class="frh">${esc(hint)}</span></div><div class="frl">${'<div class="wline"></div>'.repeat(print?n+2:n)}</div></div>`).join('');
+  return `<div class="twin${print?' printme':''}" data-k="${k}">
+    <div class="twhead"><span class="twtag">✍ Your turn on paper</span>${print?'<span class="twname">Name: ____________________ &nbsp; Date: __________</span>':''}</div>
+    ${sc.stem?`<p class="twstem"><b>${esc(sc.full)}.</b> ${esc(sc.stem)}</p>`:''}
+    <p class="qtext" style="margin-top:6px">${esc(w.q)}</p>
+    ${print?'':`<p class="muted" style="margin:0 0 8px">A very similar question. Write your answer in your <b>Revision Guide, page 8.${GPAGE[k]}</b>, using the same plan as the model.</p>`}
+    <div class="frame">${fr}</div>`
+   +(print?'':`<label class="twhide"><input type="checkbox" class="twHideCb"> Challenge: hide the frame hints</label>
+    <div class="flex noprint" style="margin-top:10px"><button class="btn alt twPrint">🖨 Print this question</button><button class="btn twDone">${written[k]?'✓ Written: check again':'I’ve written my answer'}</button></div>
+    <div class="twCheck"></div>`)+`</div>`;}
+function wireTwin(box,k,t){
+  box.querySelector('.twHideCb').onchange=e=>box.querySelector('.twin').classList.toggle('nohints',e.target.checked);
+  box.querySelector('.twPrint').onclick=()=>{const pa=$('printArea');pa.innerHTML=twinHTML(k,t,true);document.body.classList.add('print-twin');window.print();};
+  box.querySelector('.twDone').onclick=()=>{const fresh=!written[k];written[k]=true;if(fresh)award(5,3,'Paper answer written');
+    if(fresh)track(`G10 MYE 6 Section B builder (paper answer written) ${k}`,TWIN[k].q);
+    const pts=TWIN[k].pts,c=box.querySelector('.twCheck');
+    c.innerHTML=`<div class="fb info" style="margin-top:12px"><b>Check your answer.</b> Tick each point you included. You do not need every point for full marks, but each one shows the kind of reasoning the examiner rewards.</div>`+
+      pts.map((p,i)=>`<label class="stmt"><input type="checkbox" data-i="${i}"><span>${esc(p)}</span></label>`).join('')+`<div class="twScore muted" style="margin-top:6px"></div>`;
+    const upd=()=>{const n=c.querySelectorAll('input:checked').length;c.querySelector('.twScore').innerHTML=n===pts.length?'<b style="color:var(--good)">All points included: excellent.</b>':`${n} of ${pts.length} points included.${n<3?' Add the missing points to your answer in a different colour.':''}`;};
+    c.querySelectorAll('input').forEach(i=>i.onchange=upd);upd();box.querySelector('.twDone').textContent='✓ Written: check again';drawScen();};
+}
+function showDone(t){const k=key();
+  $('bModel').innerHTML=`<div class="grid2 twgrid"><div><p class="lbl">Model answer</p><div class="card" style="background:#FFFDF0;border-left:5px solid var(--orange)">${modelOf(t)}</div></div><div id="bTwin">${twinHTML(k,t,false)}</div></div>`;
+  $('bModel').classList.remove('hide');wireTwin($('bTwin'),k,t);}
+window.addEventListener('afterprint',()=>document.body.classList.remove('print-twin'));
+drawScen();resetB();
+})();
+</script>
+<div id="printArea"></div>
+</body>
+</html>
